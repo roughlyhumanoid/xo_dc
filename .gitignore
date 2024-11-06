@@ -1,0 +1,7 @@
+bak/
+*.swp
+*.tmp
+*.log
+
+**/mdsl/
+ssds/mdsl

@@ -1,0 +1,374 @@
+    1  Mar 07 11:35:30 sudo su - 
+    2  Mar 07 11:35:39 exit
+    3  Mar 07 11:35:27 bash
+    4  Mar 07 11:35:40 exit
+    5  Mar 07 11:36:30 exit
+    6  Mar 07 11:36:44 clear
+    7  Mar 07 11:45:02 ls
+    8  Mar 07 11:45:04 cd /opt
+    9  Mar 07 11:45:05 ls
+   10  Mar 07 11:45:07 cd kvm
+   11  Mar 07 11:45:08 ls
+   12  Mar 07 11:45:57 cd /opt
+   13  Mar 07 11:45:57 ls
+   14  Mar 07 11:45:59 cd kvm
+   15  Mar 07 11:45:59 ls
+   16  Mar 07 11:46:07 wget https://d8vjazrbkazun.cloudfront.net/AWS-DataSync-Agent-KVM.zip
+   17  Mar 07 11:47:10 ls -l
+   18  Mar 07 12:02:12 cd .ssh
+   19  Mar 07 12:02:14 ls -l
+   20  Mar 07 12:02:15 vi authorized_keys 
+   21  Mar 07 12:03:53 virsh
+   22  Mar 07 12:05:17 cd /opt
+   23  Mar 07 12:05:17 ls
+   24  Mar 07 12:05:18 cd kvm/
+   25  Mar 07 12:05:19 ls
+   26  Mar 07 12:05:24 unzip AWS-DataSync-Agent-KVM.zip 
+   27  Mar 07 12:05:39 ls -l
+   28  Mar 07 12:05:44 ls -lh
+   29  Mar 07 12:07:03 which virt-install
+   30  Mar 07 12:31:20 dc /opt
+   31  Mar 07 12:31:21 cd /opt
+   32  Mar 07 12:31:22 ls
+   33  Mar 07 12:31:26 cd kvm
+   34  Mar 07 12:31:26 ls
+   35  Mar 07 12:31:29 rmdir hi
+   36  Mar 07 12:31:31 cd datasync/
+   37  Mar 07 12:31:31 ls
+   38  Mar 07 12:31:35 mv AWS-DataSync-Agent-KVM.zip  ../
+   39  Mar 07 12:31:37 ls -l
+   40  Mar 07 12:31:53 readlink -e aws-datasync-2.0.1709738413.1-x86_64.xfs.gpt.qcow2 
+   41  Mar 07 12:33:18 vi ./deploy_ds.sh
+   42  Mar 07 12:33:34 chmod 755 ./deploy_ds.sh 
+   43  Mar 07 12:33:35 ./deploy_ds.sh 
+   44  Mar 07 12:34:27 vi ./deploy_ds.sh
+   45  Mar 07 12:34:40 ./deploy_ds.sh 
+   46  Mar 07 12:34:43 clear
+   47  Mar 07 12:34:44 ./deploy_ds.sh 
+   48  Mar 07 12:35:50 vi ./deploy_ds.sh
+   49  Mar 07 12:36:22 ./deploy_ds.sh 
+   50  Mar 07 13:24:23 cd /etc
+   51  Mar 07 13:24:23 ls
+   52  Mar 07 13:24:25 cd /etc
+   53  Mar 07 13:24:26 ls
+   54  Mar 07 13:25:49 cd libvirt/
+   55  Mar 07 13:25:49 ls
+   56  Mar 07 13:25:51 ls -l
+   57  Mar 07 13:25:57 cd qemu/
+   58  Mar 07 13:25:58 ls
+   59  Mar 07 13:26:01 ls -l
+   60  Mar 07 13:26:04 vi datasync.xml 
+   61  Mar 07 13:21:09 virsh
+   62  Mar 07 13:41:10 clear
+   63  Mar 07 11:33:28 sudo su - 
+   64  Mar 07 13:41:50 sudo su - 
+   65  Mar 07 14:09:40 exit
+   66  Mar 07 12:09:46 sudo su - 
+   67  Mar 07 14:09:42 exit
+   68  Mar 07 13:26:08 sudo su 
+   69  Mar 07 14:10:26 exit
+   70  Mar 07 14:46:48 sudo su -
+   71  Mar 07 14:48:18 smbclient 
+   72  Mar 07 14:48:52 smbclient -L localhsot
+   73  Mar 07 14:48:55 smbclient -L localhost
+   74  Mar 07 14:49:04 smbclient -L localhost --user xdata
+   75  Mar 07 14:49:33 smbmount
+   76  Mar 07 14:51:27 sudo mount -t cifs -o username=xdata //192.168.168.1/usb /tmp/test_mount/
+   77  Mar 07 14:51:52 ls -l /tmp
+   78  Mar 07 14:52:04 sudo chown xo-mark:xo-mark /tmp/test_mount/
+   79  Mar 07 14:52:08 sudo mount -t cifs -o username=xdata //192.168.168.1/usb /tmp/test_mount/
+   80  Mar 07 14:52:16 ls -l /tmp/test_mount/
+   81  Mar 07 14:52:21 cd usb1
+   82  Mar 07 14:52:24 ls -l
+   83  Mar 07 14:52:30 cd /tmp/test_mount/
+   84  Mar 07 14:52:30 ls
+   85  Mar 07 14:52:32 cd usb1/
+   86  Mar 07 14:52:32 ls
+   87  Mar 07 14:52:51 cd X24_MISSION_20231201/
+   88  Mar 07 14:52:51 ls
+   89  Mar 07 14:52:58 cd 01097-UKH-ENG-MULT
+   90  Mar 07 14:52:59 ls
+   91  Mar 07 12:07:10 sudo su -
+   92  Mar 07 15:00:05 cd
+   93  Mar 07 15:00:18 virsh
+   94  Mar 07 15:01:43 clear
+   95  Mar 07 15:01:58 smbclient -l 
+   96  Mar 07 15:02:03 smbclient -l localhost
+   97  Mar 07 15:02:11 smbclient -l 192.168.168.1
+   98  Mar 07 15:02:27 smbclient --list 192.168.168.1
+   99  Mar 07 15:03:56 smbclient --list \\192.168.168.1\usb
+  100  Mar 07 15:05:22 cd /tmp
+  101  Mar 07 15:05:23 ls
+  102  Mar 07 15:05:25 cd test_mount/
+  103  Mar 07 15:05:25 ls
+  104  Mar 07 15:05:28 cd usb1
+  105  Mar 07 15:05:29 ls
+  106  Mar 07 15:37:57 docker ps
+  107  Mar 07 15:38:00 cd /opt
+  108  Mar 07 15:38:00 ls
+  109  Mar 07 15:38:03 mkdir docker
+  110  Mar 07 15:38:07 sudo mkdir docker
+  111  Mar 07 15:38:20 sudo chown xo-mark:xo-mark docker
+  112  Mar 07 15:38:23 cd docker/
+  113  Mar 07 15:38:26 mkdir speedtest
+  114  Mar 07 15:38:28 cd speedtest
+  115  Mar 07 15:38:35 vi run_dc.sh
+  116  Mar 07 15:38:53 vi docker-compose.yaml
+  117  Mar 07 15:39:21 docker-compose --version
+  118  Mar 07 15:39:30 docker-compose up &
+  119  Mar 07 15:40:52 vi docker-compose.yaml 
+  120  Mar 07 15:41:05 docker-compose up &
+  121  Mar 07 15:41:48 docker network create nginx_nginx_network
+  122  Mar 07 15:41:51 docker-compose up &
+  123  Mar 07 15:42:44 docker ps
+  124  Mar 07 15:42:48 docker-compose down
+  125  Mar 07 15:42:55 sudo ufw disable
+  126  Mar 07 15:43:00 docker-compose up &
+  127  Mar 07 15:44:05 docker-compose down
+  128  Mar 07 15:44:19 cp docker-compose.yaml dc.bak
+  129  Mar 07 15:44:22 vi docker-compose.yaml 
+  130  Mar 07 15:44:32 docker-compose up &
+  131  Mar 07 15:44:50 docker ps
+  132  Mar 07 15:45:03 clearl
+  133  Mar 07 15:45:05 clear
+  134  Mar 07 15:45:07 docker ps
+  135  Mar 07 15:45:12 docker container logs -f openspeedtest 
+  136  Mar 07 15:45:26 netstat -natpul
+  137  Mar 07 15:46:06 netstat -natpl
+  138  Mar 07 15:47:57 docker ps
+  139  Mar 07 15:48:25 telnet localhost 6040
+  140  Mar 07 15:48:28 telnet localhost 6041
+  141  Mar 07 11:46:34 sudo su -
+  142  Mar 07 15:57:23 sudo su -
+  143  Mar 09 21:12:34 cd /mnt
+  144  Mar 09 21:12:34 ls
+  145  Mar 09 21:12:40 cd usb_drives/
+  146  Mar 09 21:12:40 ls
+  147  Mar 09 21:12:42 cd usb1/
+  148  Mar 09 21:12:42 ls
+  149  Mar 09 21:12:45 du -sh *
+  150  Mar 09 21:13:22 mkdir -p /opt/usv/test_set
+  151  Mar 09 21:13:26 sudo mkdir -p /opt/usv/test_set
+  152  Mar 09 21:13:46 cd /opt
+  153  Mar 09 21:13:48 ls -l
+  154  Mar 09 21:14:12 sudo chown -R xo-mark:xo-mark usv
+  155  Mar 09 21:14:14 ls -l
+  156  Mar 09 21:14:22 mv usv usb
+  157  Mar 09 21:14:26 sudo mv usv usb
+  158  Mar 09 21:14:27 ls -l
+  159  Mar 09 21:14:41 ls -l /mnt/usb_drives/usb1/
+  160  Mar 09 21:14:58 sudo su - 
+  161  Mar 09 21:15:15 ls -l
+  162  Mar 09 21:15:27 rsync -a awscliv2.zip /tmp/
+  163  Mar 09 21:18:07 rsync -av /mnt/usb_drives/usb1/X24_MISSION_20231201 /opt/usb/test_set/ | ts >> /tmp/sync_test.log 2>&1 &
+  164  Mar 09 21:17:12 sudo su - 
+  165  Mar 09 21:35:17 exit
+  166  Mar 09 21:18:21 tail -f /tmp/sync_test.log 
+  167  Mar 09 21:35:20 exit
+  168  Mar 13 12:46:50 dir
+  169  Mar 13 12:46:51 ls
+  170  Mar 13 12:46:52 cd /
+  171  Mar 13 12:46:52 ls
+  172  Mar 13 12:46:55 cd /mnt/
+  173  Mar 13 12:46:55 ls
+  174  Mar 13 12:46:59 cd usb1/
+  175  Mar 13 12:47:00 ls
+  176  Mar 13 12:47:01 cd ..
+  177  Mar 13 12:47:05 cd usb_drives/
+  178  Mar 13 12:47:06 ls
+  179  Mar 13 12:47:08 dc usb1/
+  180  Mar 13 12:47:10 cd usb1/
+  181  Mar 13 12:47:10 ls
+  182  Mar 13 12:47:12 cd ..
+  183  Mar 13 12:47:12 ls
+  184  Mar 13 12:47:13 cd ..
+  185  Mar 13 12:47:14 ls
+  186  Mar 13 12:47:17 cd /opt
+  187  Mar 13 12:47:18 ls
+  188  Mar 13 12:47:20 cd usb
+  189  Mar 13 12:47:21 ls
+  190  Mar 13 12:47:23 cd test_set/
+  191  Mar 13 12:47:23 ls
+  192  Mar 13 12:47:25 du -sh *
+  193  Mar 13 12:47:38 sudo su - 
+  194  Mar 13 13:25:51 exit
+  195  Mar 13 13:50:46 exit
+  196  Mar 14 21:37:24 dir
+  197  Mar 14 21:37:26 clear
+  198  Mar 14 21:37:35 ping 10.240.1.112
+  199  Mar 14 21:37:39 nmap
+  200  Mar 14 21:37:53 nmap -p 1-1000 10.240.1.112
+  201  Mar 14 21:38:06 nmap -p 1-10000 10.240.1.112
+  202  Mar 14 21:38:20 nmap -p 1-20000 10.240.1.112
+  203  Mar 15 13:36:23 ls
+  204  Mar 15 13:37:02 lsusb
+  205  Mar 15 13:37:05 cd
+  206  Mar 15 13:37:08 mkdir scripts
+  207  Mar 15 13:37:10 cd scripts/
+  208  Mar 15 13:37:12 vi usb.sh
+  209  Mar 15 13:37:35 chmod 755 usb.sh 
+  210  Mar 15 13:37:40 ./usb.sh 
+  211  Mar 15 13:38:01 usbview 
+  212  Mar 15 13:38:49 ls-pci
+  213  Mar 15 13:38:57 lspci
+  214  Mar 15 13:39:02 usb-devices 
+  215  Mar 15 13:39:09 vi usb.sh
+  216  Mar 15 13:40:21 man usb-devices
+  217  Mar 15 13:42:59 lsusb -v -t
+  218  Mar 15 13:43:25 lsusb -v 
+  219  Mar 15 13:44:29 lsusb -v > ./usb.txt
+  220  Mar 15 13:44:44 cat usb.txt | grep Bus
+  221  Mar 15 13:44:45 clear
+  222  Mar 15 13:44:46 cat usb.txt | grep Bus
+  223  Mar 15 13:44:59 vi usb.txt 
+  224  Mar 15 13:45:44 lsusb -v -s 001
+  225  Mar 15 13:45:52 lsusb -v -s 001 | grep -i Bus
+  226  Mar 15 13:46:09 lsusb -v | grep -i Bus
+  227  Mar 15 13:46:26 lsusb -v 2 > /dev/null | grep -i Bus
+  228  Mar 15 13:46:38 lsusb -v 2> /dev/null | grep -i Bus
+  229  Mar 15 13:46:53 lsusb -v 2> /dev/null | grep -i Bus | grep Device
+  230  Mar 15 13:46:54 clear
+  231  Mar 15 13:46:55 lsusb -v 2> /dev/null | grep -i Bus | grep Device
+  232  Mar 15 13:47:15 lsusb -s 001 -v 2> /dev/null | grep -i Bus | grep Device
+  233  Mar 15 13:47:19 lsusb -s 002 -v 2> /dev/null | grep -i Bus | grep Device
+  234  Mar 15 13:48:02 lsusb -s 002: -v 2> /dev/null | grep -i Bus | grep Device
+  235  Mar 15 13:48:11 lsusb -s 001: -v 2> /dev/null | grep -i Bus | grep Device
+  236  Mar 15 13:48:23 ls
+  237  Mar 15 13:48:26 vi usb.sh 
+  238  Mar 15 13:49:06 ./usb.sh 
+  239  Mar 15 13:49:09 vi usb.sh 
+  240  Mar 15 13:50:13 clear
+  241  Mar 15 13:50:16 ./usb.sh 
+  242  Mar 15 13:50:42 lsusb -v
+  243  Mar 15 13:50:48 ./usb.sh 
+  244  Mar 15 13:51:01 lsusb -v -s 001:012
+  245  Mar 15 13:51:45 lsusb -v -s 001:008
+  246  Mar 15 13:52:56 lsusb -v | grep iserial
+  247  Mar 15 13:53:06 lsusb -v | grep iSerial
+  248  Mar 15 13:53:22 lsusb -s 001: -v 2> /dev/null | grep -i iserial
+  249  Mar 15 13:53:57 lsusb -v 2> /dev/null | grep -i iserial
+  250  Mar 15 13:55:01 lsusb -v 2> /dev/null | grep -iE 'iserial|
+  251  Mar 15 13:55:08 vi usb.sh 
+  252  Mar 15 13:55:24 lsusb -v 2> /dev/null | grep -iE 'iserial|Bus'
+  253  Mar 15 13:55:55 lsusb -v 2> /dev/null | grep -iE 'Powered|Bus' 
+  254  Mar 15 13:56:15 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' 
+  255  Mar 15 13:56:18 clear
+  256  Mar 15 13:56:19 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' 
+  257  Mar 15 13:57:11 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' | grep 'Bus Powered'
+  258  Mar 15 13:57:15 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' | grep 'Bus Powered' -B 1
+  259  Mar 15 13:57:46 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' | grep 'Bus Powered' -B 1 | grep Device
+  260  Mar 15 13:58:40 lsusb -v 2> /dev/null | grep -iE 'Bus Powered|Bus' | grep 'Bus Powered' -B 1 | grep Device > /tmp/usb_tmp.fil
+  261  Mar 15 13:58:48 vi usb.sh 
+  262  Mar 15 13:59:53 ./usb.sh 
+  263  Mar 15 14:00:06 cat /tmp/usb_tmp.fil 
+  264  Mar 15 14:00:09 vi usb.sh 
+  265  Mar 15 14:00:49 ./usb.sh 
+  266  Mar 15 14:00:53 vi usb.sh 
+  267  Mar 15 14:01:17 ./usb.sh 
+  268  Mar 15 14:01:52 vi usb.sh 
+  269  Mar 15 14:05:07 ./usb.sh 
+  270  Mar 15 14:05:10 vi usb.sh 
+  271  Mar 15 14:05:19 cat /tmp/usb_tmp.fil 
+  272  Mar 15 14:05:21 vi usb.sh 
+  273  Mar 15 14:05:35 cat /tmp/usb_tmp.fil 
+  274  Mar 15 14:05:37 ./usb.sh 
+  275  Mar 15 14:05:44 vi usb.sh 
+  276  Mar 15 14:06:17 ./usb.sh 
+  277  Mar 15 14:06:21 vi usb.sh 
+  278  Mar 15 14:06:26 ./usb.sh 
+  279  Mar 15 14:06:30 vi usb.sh 
+  280  Mar 15 14:07:39 ./usb.sh 
+  281  Mar 15 14:08:06 cat /tmp/usb_tmp.fil 
+  282  Mar 15 14:08:10 cat /tmp/usb_tmp.fil | wc -l
+  283  Mar 15 14:08:13 vi usb.sh 
+  284  Mar 15 14:11:25 ./usb.sh 
+  285  Mar 15 14:11:34 vi usb.sh 
+  286  Mar 15 14:12:22 ./usb.sh 
+  287  Mar 15 14:12:38 vi usb.sh 
+  288  Mar 15 14:13:28 ./usb.sh 
+  289  Mar 15 14:13:33 vi usb.sh 
+  290  Mar 15 14:14:51 ./usb.sh 
+  291  Mar 15 14:14:52 vi usb.sh 
+  292  Mar 15 14:14:59 ./usb.sh 
+  293  Mar 15 14:15:37 vi usb.sh 
+  294  Mar 15 14:18:13 ./usb.sh 
+  295  Mar 15 14:18:15 vi usb.sh 
+  296  Mar 15 14:18:22 clear
+  297  Mar 15 14:18:24 ./usb.sh 
+  298  Mar 15 14:18:34 vi usb.sh 
+  299  Mar 15 14:19:59 ./usb.sh 
+  300  Mar 15 14:20:04 vi usb.sh 
+  301  Mar 15 14:20:14 ./usb.sh 
+  302  Mar 15 14:20:16 vi usb.sh 
+  303  Mar 15 14:20:26 ./usb.sh 
+  304  Mar 15 14:20:29 vi usb.sh 
+  305  Mar 15 14:21:27 ./usb.sh 
+  306  Mar 15 14:21:31 vi usb.sh 
+  307  Mar 15 14:22:03 clear
+  308  Mar 15 14:22:05 ./usb.sh 
+  309  Mar 15 14:22:09 vi usb.sh 
+  310  Mar 15 14:22:21 ./usb.sh 
+  311  Mar 15 14:22:24 vi usb.sh 
+  312  Mar 15 14:22:34 ./usb.sh 
+  313  Mar 15 14:22:39 vi usb.sh 
+  314  Mar 15 14:23:10 ./usb.sh 
+  315  Mar 15 14:23:33 vi usb.sh 
+  316  Mar 15 14:23:48 ./usb.sh 
+  317  Mar 15 14:23:56 vi usb.sh 
+  318  Mar 15 14:24:20 ./usb.sh 
+  319  Mar 15 14:24:30 vi usb.sh 
+  320  Mar 15 14:25:03 ./usb.sh 
+  321  Mar 15 14:25:06 vi usb.sh 
+  322  Mar 15 14:26:08 lsusb -v -s 001:012
+  323  Mar 15 14:27:08 lsblk
+  324  Mar 15 14:27:24 lsusb -v -s 001:012 ./u1.txt
+  325  Mar 15 14:27:28 lsusb -v -s 001:012 > ./u1.txt
+  326  Mar 15 14:27:41 cat u1.txt | grep dev
+  327  Mar 15 14:27:49 cat u1.txt | grep sd
+  328  Mar 15 14:27:56 cat u1.txt | grep disk
+  329  Mar 15 14:30:01 lsblk --tree
+  330  Mar 15 14:30:59 lsblk --tree -a
+  331  Mar 15 14:31:15 lsblk --tree -f
+  332  Mar 15 14:31:17 clear
+  333  Mar 15 14:31:19 lsblk --tree -f
+  334  Mar 15 14:32:08 lsblk --tree -f --help
+  335  Mar 15 14:32:56 lsblk --tree -o NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN
+  336  Mar 15 14:33:36 lsblk --tree -o NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS
+  337  Mar 15 14:33:54 lsblk --tree -o NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS,TYPE
+  338  Mar 15 14:34:02 lsblk --tree -o TYPE,NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS
+  339  Mar 15 14:34:23 lsblk --tree -o TYPE,NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS | grep -E 'disk|part'
+  340  Mar 15 14:34:59 lsblk --tree -O
+  341  Mar 15 14:35:13 lsblk --tree -O --json
+  342  Mar 15 14:35:46 vi usb.sh 
+  343  Mar 15 14:36:38 ./usb.sh 
+  344  Mar 15 14:36:53 lsblk --help
+  345  Mar 15 14:37:28 lsblk -o TYPE,NAME,SIZE,OWNER,GROUP,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS | grep -E 'disk|part'
+  346  Mar 15 14:38:15 lsblk -o TYPE,NAME,SIZE,OWNER,,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS | grep -E 'disk|part'
+  347  Mar 15 14:38:20 lsblk -o TYPE,NAME,SIZE,OWNER,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS | grep -E 'disk|part'
+  348  Mar 15 14:38:53 lsblk -o TYPE,MOUNTPOINT,NAME,SIZE,OWNER,MODE,SERIAL,PATH,MAJ:MIN,FSTYPE,FSSIZE,FSUSED,FSUSE%,FSROOTS | grep -E 'disk|part'
+  349  Mar 15 14:39:17 lsblk --tree -O --json  >> ./lsblk.json
+  350  Mar 15 14:40:36 ls
+  351  Mar 15 14:40:38 cd scripts/
+  352  Mar 15 14:40:38 ls
+  353  Mar 15 14:40:46 cat usb.sh 
+  354  Mar 15 14:41:08 lsblk -o TYPE,NAME,SERIAL,SIZE,MODEL
+  355  Mar 15 14:42:26 lsblk -o TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT
+  356  Mar 15 14:42:39 lsblk -o TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT,PARTLABEL
+  357  Mar 15 14:43:13 lsblk -o TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT,PARTLABEL,LABEL
+  358  Mar 15 14:43:20 lsblk -o LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT,PARTLABEL,LABEL
+  359  Mar 15 14:43:25 lsblk -o LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT,PARTLABEL
+  360  Mar 15 14:43:32 lsblk -o LABEL,PARTLABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT,PARTLABEL
+  361  Mar 15 14:43:35 lsblk -o LABEL,PARTLABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT
+  362  Mar 15 14:44:14 lsblk -o SUBSYSTEMS,LABEL,PARTLABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT
+  363  Mar 15 14:44:24 lsblk -o SUBSYSTEMS,LABEL,PARTLABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb
+  364  Mar 15 14:44:26 clear
+  365  Mar 15 14:44:27 lsblk -o SUBSYSTEMS,LABEL,PARTLABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb
+  366  Mar 15 14:45:14 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb
+  367  Mar 15 14:46:06 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk 'print($0)'
+  368  Mar 15 14:47:16 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk '{for (i=2; i<=NF; i++)printf "%s ",$i};{printf " "}')'
+  369  Mar 15 14:47:34 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk '{for (i=2; i<=NF; i++)printf "%s ",$i};{printf " "}'
+  370  Mar 15 14:48:04 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk '{for (i=2; i<NF; i++)printf "%s ",$i};{printf "%s\n" $NF}'
+  371  Mar 15 14:48:47 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk '{for (i=2; i<=NF; i++)printf "%s ",$i};{printf "\n"}'
+  372  Mar 15 14:49:01 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb
+  373  Mar 15 14:49:12 lsblk -o SUBSYSTEMS,LABEL,TYPE,NAME,SERIAL,SIZE,MODEL,PATH,MOUNTPOINT | grep usb | awk '{for (i=2; i<=NF; i++)printf "%s ",$i};{printf "\n"}'
+  374  Mar 15 14:51:03 history > ./usb_cmd.hist

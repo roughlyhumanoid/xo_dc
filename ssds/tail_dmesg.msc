@@ -1,0 +1,6 @@
+#!/bin/bash
+bdir=/var/log/xocean_data_centre
+
+printf "Writing to: %s, err to: %s\n" "${bdir}/dmesg_usb.log" "${bdir}/dmesg_usb.err"
+
+dmesg -T -x --follow | grep usb >> "${bdir}/dmesg_usb.log" 2> "${bdir}/dmesg_usb.err" &

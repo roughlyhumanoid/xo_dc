@@ -1,0 +1,979 @@
+
+Bus 002 Device 004: ID 05e3:0620 Genesys Logic, Inc. USB3.2 Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               3.20
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         3 
+  bMaxPacketSize0         9
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0620 
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB3.2 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x001f
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower                0mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes           19
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Feedback
+        wMaxPacketSize     0x0002  1x 2 bytes
+        bInterval               8
+        bMaxBurst               0
+
+Bus 002 Device 003: ID 05e3:0620 Genesys Logic, Inc. USB3.2 Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               3.20
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         3 
+  bMaxPacketSize0         9
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0620 
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB3.2 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x001f
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower                0mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes           19
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Feedback
+        wMaxPacketSize     0x0002  1x 2 bytes
+        bInterval               8
+        bMaxBurst               0
+
+Bus 002 Device 002: ID 05e3:0620 Genesys Logic, Inc. USB3.2 Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               3.20
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         3 
+  bMaxPacketSize0         9
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0620 
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB3.2 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x001f
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower                0mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes           19
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Feedback
+        wMaxPacketSize     0x0002  1x 2 bytes
+        bInterval               8
+        bMaxBurst               0
+
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               3.10
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         3 
+  bMaxPacketSize0         9
+  idVendor           0x1d6b Linux Foundation
+  idProduct          0x0003 3.0 root hub
+  bcdDevice            5.15
+  iManufacturer           3 Linux 5.15.0-97-generic xhci-hcd
+  iProduct                2 xHCI Host Controller
+  iSerial                 1 0000:00:14.0
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x001f
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower                0mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0004  1x 4 bytes
+        bInterval              12
+        bMaxBurst               0
+
+Bus 001 Device 012: ID 0781:55af SanDisk Corp. Extreme Pro 55AF
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x0781 SanDisk Corp.
+  idProduct          0x55af 
+  bcdDevice           40.55
+  iManufacturer           2 SanDisk
+  iProduct                3 Extreme Pro 55AF
+  iSerial                 1 323331313735343031343036
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0055
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              500mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     80 Bulk-Only
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           4
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     98 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-in pipe (0x03)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-out pipe (0x04)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Status pipe (0x02)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x04  EP 4 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Command pipe (0x01)
+
+Bus 001 Device 013: ID 0781:55af SanDisk Corp. Extreme Pro 55AF
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x0781 SanDisk Corp.
+  idProduct          0x55af 
+  bcdDevice           40.55
+  iManufacturer           2 SanDisk
+  iProduct                3 Extreme Pro 55AF
+  iSerial                 1 323331313735343033383733
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0055
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              500mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     80 Bulk-Only
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           4
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     98 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-in pipe (0x03)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-out pipe (0x04)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Status pipe (0x02)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x04  EP 4 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Command pipe (0x01)
+
+Bus 001 Device 007: ID 05e3:0610 Genesys Logic, Inc. Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         2 TT per port
+  bMaxPacketSize0        64
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0610 Hub
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB2.1 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0029
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      1 Single TT
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      2 TT per port
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+
+Bus 001 Device 009: ID 0781:55af SanDisk Corp. Extreme Pro 55AF
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x0781 SanDisk Corp.
+  idProduct          0x55af 
+  bcdDevice           10.85
+  iManufacturer           2 SanDisk
+  iProduct                3 Extreme Pro 55AF
+  iSerial                 1 323034334835343030363434
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0055
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              500mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     80 Bulk-Only
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           4
+      bInterfaceClass         8 Mass Storage
+      bInterfaceSubClass      6 SCSI
+      bInterfaceProtocol     98 
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-in pipe (0x03)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Data-out pipe (0x04)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Status pipe (0x02)
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x04  EP 4 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+        Command pipe (0x01)
+
+Bus 001 Device 005: ID 05e3:0610 Genesys Logic, Inc. Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         2 TT per port
+  bMaxPacketSize0        64
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0610 Hub
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB2.1 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0029
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      1 Single TT
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      2 TT per port
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+
+Bus 001 Device 003: ID 05e3:0610 Genesys Logic, Inc. Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         2 TT per port
+  bMaxPacketSize0        64
+  idVendor           0x05e3 Genesys Logic, Inc.
+  idProduct          0x0610 Hub
+  bcdDevice           93.07
+  iManufacturer           1 GenesysLogic
+  iProduct                2 USB2.1 Hub
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0029
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      1 Single TT
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       1
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      2 TT per port
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0001  1x 1 bytes
+        bInterval              12
+
+Bus 001 Device 008: ID 1604:10c0 Tascam Dell Integrated Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         1 Single TT
+  bMaxPacketSize0        64
+  idVendor           0x1604 Tascam
+  idProduct          0x10c0 Dell Integrated Hub
+  bcdDevice            0.00
+  iManufacturer           0 
+  iProduct                0 
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0019
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval              12
+
+Bus 001 Device 004: ID 1604:10c0 Tascam Dell Integrated Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         1 Single TT
+  bMaxPacketSize0        64
+  idVendor           0x1604 Tascam
+  idProduct          0x10c0 Dell Integrated Hub
+  bcdDevice            0.00
+  iManufacturer           0 
+  iProduct                0 
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0019
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval              12
+
+Bus 001 Device 002: ID 1604:10c0 Tascam Dell Integrated Hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         1 Single TT
+  bMaxPacketSize0        64
+  idVendor           0x1604 Tascam
+  idProduct          0x10c0 Dell Integrated Hub
+  bcdDevice            0.00
+  iManufacturer           0 
+  iProduct                0 
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0019
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval              12
+
+Bus 001 Device 011: ID 0922:0029 Dymo-CoStar Corp. DYMO LabelWriter 550 Turbo
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x0922 Dymo-CoStar Corp.
+  idProduct          0x0029 
+  bcdDevice            1.00
+  iManufacturer           1 DYMO
+  iProduct                2 DYMO LabelWriter 550 Turbo
+  iSerial                 3 05324027595202
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0020
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xc0
+      Self Powered
+    MaxPower                4mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         7 Printer
+      bInterfaceSubClass      1 Printer
+      bInterfaceProtocol      2 Bidirectional
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            9 Hub
+  bDeviceSubClass         0 
+  bDeviceProtocol         1 Single TT
+  bMaxPacketSize0        64
+  idVendor           0x1d6b Linux Foundation
+  idProduct          0x0002 2.0 root hub
+  bcdDevice            5.15
+  iManufacturer           3 Linux 5.15.0-97-generic xhci-hcd
+  iProduct                2 xHCI Host Controller
+  iSerial                 1 0000:00:14.0
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0019
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xe0
+      Self Powered
+      Remote Wakeup
+    MaxPower                0mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         9 Hub
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 Full speed (or root) hub
+      iInterface              0 
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0004  1x 4 bytes
+        bInterval              12

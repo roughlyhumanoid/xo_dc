@@ -1,0 +1,213 @@
+#!/bin/bash
+script_dir=/opt/xo_usv/bash
+source "${script_dir}/gen_utils.sh"
+clear_screen=0
+xsync_command='help'
+
+function print_dc_help()
+{
+	# echo help
+	printf "\n# --- DC tools --- #\n"
+        help_line '' 'datasync' 'Datasync tools.' 'Example usage: datasync'
+	printf "\n"
+        help_line '' 'runcam' 'Runs camera uploads.  Run without options for help' 'Example usage:  runcam'
+	printf "\n"
+        help_line '' 'ssds' 'Lists and mounts ssds.' 'Example usage: ssds'
+	printf "\n\n"
+}
+
+function print_help()
+{
+	# clear
+	printf "\n# --- xsync commands --- #\n\n"
+	# printf "Not subcommands of xsync.  Run as is from command prompt.\n"
+	printf "\tFor help, [COMMAND] or [COMMAND] -h.  Example: \txsync_status -h\n"
+	printf "\tMost commands can be run either of these ways\n\t\'xcommand -x x98 [OPTIONS]\'\n\t\'xcommand x98 [OPTIONS]\'\n\n"
+	printf "      Command\t\t   Description\n"
+	printf "      -------\t\t   -----------\n"
+        help_line '' 'cmission' 'View USV mission config, control node & usv.  Use to verify USV configured.' 'Example usage:  cmission x98'
+	printf "\n"
+        help_line '' 'usv_usync' 'Sync indivdual sets, range of sets.' 'Example usage:  usv_sync -x x98 -s 3 -e 5 -n 2'
+	printf "\n"
+        # help_line '' 'csets' 'View sets configured for a usv.' 'Example usage:  csets x98'
+        help_line '' 'xcheck' 'Interrogates USV to check whether it has been fully set up.  Runs several commands remotely.  Run before new missions.' 'Example usage:  xcheck -x x98'
+	printf "\n"
+        help_line '' 'xinventory' 'Runs file inventory on USV for currently active mission and data sets.  Runs set by set.' 'Example usage:  xinventory -x x98'
+	printf "\n"
+        help_line '' 'xlog' 'Stream current/most recent log activity.' 'Example usage:  xlog x98'
+	printf "\n"
+        help_line '' 'xpullconfig' 'Pulls latest configs for USV to local control node.' 'Example usage:  xpullconfig -x x98 -a' 
+	printf "\n"
+        help_line '' 'xsets' 'View sets configured for a usv.' 'Example usage:  csets x98'
+	printf "\n"
+        help_line '' 'xsync_bandwidth' 'Get/set xsync upload banwdith, and other aws upload settings.' 'Example usage:  xsync_bandwidth -x x98'
+	printf "\n"
+        help_line '' 'xsync_status' 'Get/set xsync_status.' 'Example usage:  xsync_status -x x98' 
+	printf "\n"
+        help_line '' 'xupdate' 'Updates usv with latest config.   Combines xdown, xpullconfig, xsftp, cmission' 'Example usage:  xupdate -x x98' 
+	printf "\n"
+        help_line '' 'zipstat' 'Shows status of zip process on usv.   Also known as cproc.sh' 'Example usage:  zipstat x98' 
+	printf "\n"
+	
+	# Usage xsync [COMMAND] [-x|--usv USV] [-l|--log LOG_LEVEL] \n"  #[-e END_INDEX] [-m MIN_AGE_SECONDS] [-l LOG_LEVEL]\n"
+	printf "\n# --- Legacy commands.  No help --- #\n"
+        help_line '' 'xrun x98' 'Runs sync cycle for X98' ''
+        help_line '' 'x2.sh x98' 'Runs sync cycle for X98' ''
+	# printf "\n# --- xsync --- #\n"
+	# printf "xsync commands and usage.\n"
+	# printf "Usage:\n\txsync [COMMAND] [-x|--usv USV] [-l|--log LOG_LEVEL] \n"  #[-e END_INDEX] [-m MIN_AGE_SECONDS] [-l LOG_LEVEL]\n"
+
+        # help_line '' 'sync' 'run sync.' ''
+        # help_line 'aws_update' '' 'update aws configuration.' ''
+        # help_line '' 'status' 'get/set xsync status.' ''
+
+	print_deploy_help
+	# printf "# ------------------------ #\n"
+
+        #help_line '-s' 'START_INDEX' 'starting index for sets to process' 'default: 0'
+        # help_line '-e' 'END_INDEX' 'ending index for sets to process' 'default: same as start index'
+}
+
+
+function print_cmd_string()
+{
+	printf "Command string: %s\n" "$*"
+	# n_commands="${#cmd_string}"
+	# printf "Number commands: %d\n" "$n_commands"
+}
+
+cmd_string=$1
+if [[ "$cmd_string" == "nc" ]]; then
+	clear_screen=1
+	print_dc_help; 
+	exit 1
+fi
+
+# printf "Command string: \n\t%s\n" "$*"
+# printf "Command string: \n\t%s %s\n" "$0" "$@"
+# print_cmd_string
+
+if [[ "${#cmd_string}" -lt 2 ]]; then 
+	if [[ "$clear_screen" -eq 0 ]]; then
+		clear
+	fi
+
+	print_dc_help; 
+	exit 1; 
+fi
+exit 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# TEMP=$(getopt -o adhp:u:vx: --long dev,hi,publish:,update_aws,usv:,verbose -- "$@")
+ # Note the quotes around '$TEMP': they are essential!
+# eval set -- "$TEMP"
+
+#default values
+usv=''
+DEV=0
+VERBOSE=0
+# printf "Got here\n"
+m_max=20
+m=0
+
+case "$1" in 
+	'run' )
+		shift
+		printf "Running command: xrun %s\n" "$*"
+		/opt/xo_usv/bash/rcron.sh $@
+		;;
+esac
+exit 0
+
+
+
+while true; do
+	printf "%s\n" "${1}"
+	m=$(expr $m + 1)
+	if [[ "$m" -gt "$m_max" ]]; then printf "Error, too many params.\n"; break; fi
+
+    case "$1" in
+        -d | --dev ) DEV=1; shift ;;
+        -r | --run ) 
+		shift 
+		echo "$@"
+		;;
+        -p | --publish ) PUBLISH="$2" ; shift 2;;
+        -x | --usv ) usv="$2" ; shift 2;;
+        -a | --update_aws ) 
+		echo e_update
+		UPDATE_AWS="0"; shift 
+		xsync_command='update_aws'
+		;;
+        -s | --status ) echo 'status';  
+		shift 1;;
+        -v | --verbose ) VERBOSE="-v" ; 
+		shift ;;
+        -z | --zipstat ) echo zipstat;  
+		shift ;;
+	-h | --hi | hi ) printf "Somehow got here\n";
+		shift 
+		;;
+        -- ) if [ -n "$2" ]
+            then
+                ARGUMENT1=$2
+                if [ -n "$3" ]
+                then
+                    ARGUMENT2=$3
+                    if [ -n "$4" ]
+                    then
+                        shift 3
+                        echo "Unexpected options: \"$@\" . exiting."
+                        exit 1;
+                    fi
+                fi
+            fi
+            shift 2; break;;
+        * ) break ;;
+    esac
+done
+
+
+
+
+
+exit 0
+echo $usv
+# echo $cmd_string
+# echo $xsync_command
+
+case "$cmd_string" in
+  status)
+    "${script_dir}/xsync_status" -x ${usv}
+    ;;
+  update_aws)
+    echo "${script_dir}/setup/update_aws.sh" ${usv}
+    ;;
+
+  Romania | Moldova)
+    echo -n "Romanian"
+    ;;
+
+  Italy | "San Marino" | Switzerland | "Vatican City")
+    echo -n "Italian"
+    ;;
+
+  *)
+    echo -n "unknown"
+    ;;
+esac
+

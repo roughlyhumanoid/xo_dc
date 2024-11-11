@@ -2,8 +2,9 @@
 s3dc='s3://xocean-production-raw-dc-eu-west-2'
 base_dir="/mnt/usb_drives"
 pid_file="/usr/var/run/ssd_upload.pid"
-ssd=$1
+# ssd=$1
 # ssd='428'
+delete_s3=1
 
 set -Eeuo pipefail
 
@@ -44,6 +45,7 @@ function upload_ssd()
 	
 		aws s3 --profile dc_auto_camera \
 			sync "$this_source_subdir" "$this_dest_subdir" 
+			# --delete
 
 		#	--dryrun
 		# --debug \
@@ -63,14 +65,48 @@ function upload_all_ssds()
 	for (( ssd_i=0; ssd_i<$number_ssds; ssd_i++ )); do
 		local full_ssd="${all_ssds[$ssd_i]}"
 		printf "STARTED Running for ssd: %s\n" "$full_ssd" 2>&1 | tee -a /var/log/xocean_data_centre/bnw_upload.log
-		upload_ssd "${full_ssd}"
+		# upload_ssd "${full_ssd}"
 		printf "FINISHED running for ssd: %s\n" "$full_ssd" 2>&1 | tee -a /var/log/xocean_data_centre/bnw_upload.log
 		sleep 1
 	done
 }
 
+arg=$1
+if [[ "${#arg}" -eq 3 ]]; then
+	ssd=$arg
+	shift
+fi
 
-upload_all_ssds
+# while getopts "ade:gikKlqrs:St:vx:h" opt; do
+while getopts "ds:h" opt; do
+  case $opt in
+    d)
+        delete_s3=0
+      ;;
+    s)
+        ssd=$OPTARG
+      ;;
+    h)
+        print_help
+        exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG"
+      exit
+      ;;
+  esac
+done
+
+
+
+printf "Running for ssd: %s\n" "$ssd"
+# one_ssd=$1
+upload_ssd "$ssd"
+
+
+
+
+
 exit 0
 # Create pid file
 

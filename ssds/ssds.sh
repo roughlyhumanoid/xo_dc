@@ -34,6 +34,7 @@ quiet=1
 query_ssd=1
 check_sync=1
 just_local=0
+one_line=1
 
 # print help
 function print_help()
@@ -82,8 +83,12 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "ade:gikKlqrs:St:vx:h" opt; do
-while getopts "aCd:efi:jlqQs:uh" opt; do
+while getopts "aACd:efi:jloqQs:uh" opt; do
   case $opt in
+    A)
+	"${ssd_dir}/scan_all.sh"
+	exit 0
+      ;;
     a)
 	sudo "${ssd_dir}/auto_mount.sh" 'tail'
 	exit 0
@@ -149,6 +154,9 @@ while getopts "aCd:efi:jlqQs:uh" opt; do
     m)
 	query_ssd=0
       ;;
+    o)
+	one_line=0
+      ;;
     q)
         quiet=0
       ;;
@@ -203,6 +211,8 @@ fi
 if [[ "$query_ssd" -eq 0 ]]; then
 	query_path="/mnt/usb_drives/ssd_${ssd}"
 
+	if [[ ! -d "$query_path" ]]; then printf "Directory does not exist: %s\n" "$query_path"; exit 0; fi
+
 	if [[ ! "$quiet" -eq 0 ]]; then
 		printf "ssd_%s\tPrinting sub_dirs of: %s\n" "$ssd"  "$query_path"
 		ls -l "${query_path}" | grep -Ev 'RECY|System Volume'
@@ -211,26 +221,51 @@ if [[ "$query_ssd" -eq 0 ]]; then
 	# ls -1 "${query_path}" | grep -Ev 'RECY|System Volume'
 
 	if [[ "$check_sync" -eq 0 ]]; then
+		this_ssd="ssd_${ssd}"
 		tmp_fil=$(mktemp)
-		ls -1 "${query_path}" | grep -Ev 'RECY|System Volume' > $tmp_fil
-		readarray -t subdirs <<< $(cat $tmp_fil)
-		ns="${#subdirs[@]}"
+		# ls -1 "${query_path}" | grep -Ev 'RECY|System Volume' > $tmp_fil
+		# echo $query_path
+		# ls -1 "${query_path}" 
+		# find "${query_path}" -maxdepth 1 -mindepth 1 -type d -exec ls -1 {} \; 
+		# | grep -Ev 'RECY|System Volume' > $tmp_fil
+		# exit 0	
+		ndirs=$(find "${query_path}" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | grep -Ev 'RECY|System Volume' | wc -l)
 
-		if [[ "$ns" -eq 0 ]]; then printf "SSD is empty: %s\n" "$ssd"; break; fi
+		if [[ "$ndirs" -gt 0 ]]; then
+			find "${query_path}" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | grep -Ev 'RECY|System Volume' > "$tmp_fil"
+			readarray -t subdirs <<< $(cat $tmp_fil)
+			ns="${#subdirs[@]}"
 
-		for (( i=0; i<$ns; i++ )); do
-			subdir="${subdirs[$i]}"
-			this_ssd="ssd_${ssd}"
-			pref="ssd_${ssd} ${subdir}"
-			printf "%s\tChecking: ssd: %s, mission: %s\n" "$pref" "$this_ssd" "$subdir"
-			"${ssd_dir}/mdsl/cc_disk_stats.sh" -p "${this_ssd}" -d -q -m "$subdir" | awk -v "pref=$pref" '{printf "%s\t%s\n",pref,$0}'
-			printf "\n"
-		done
+			if [[ "$ns" -eq 0 ]]; then printf "SSD is empty: %s\n" "$ssd"; break; fi
 
-		rm $tmp_fil
+			if [[ "$one_line" -eq 0 ]]; then
+			# pref="ssd_${ssd} ALL MISSIONS"
+				pref=$(printf "%28s" '')
+			# "${ssd_dir}/mdsl/cc_disk_stats.sh" -j | awk -v "pref=$pref" '{printf "%s\t%s\n",pref,$0}' | awk NF
+			fi
 
-		ls -l "${query_path}" | grep -v total | awk -v "ssd=ssd_${ssd}" '{printf "%s\tALL\t%s\n",ssd,$0}' 
-		# | grep -Ev 'RECY|System Volume' | 
+			for (( i=0; i<$ns; i++ )); do
+				subdir="${subdirs[$i]}"
+				pref="ssd_${ssd} ${subdir}"
+
+				if [[ "${quiet}" -ne 0 ]]; then printf "%s\tChecking: ssd: %s, mission: %s\n" "$pref" "$this_ssd" "$subdir"; fi
+
+				if [[ "$one_line" -eq 0 ]]; then
+					"${ssd_dir}/mdsl/cc_disk_stats.sh" -H -o -q -p "${this_ssd}" -d -q -m "$subdir" | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
+				else
+					"${ssd_dir}/mdsl/cc_disk_stats.sh" -p "${this_ssd}" -d -q -m "$subdir" | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
+				fi
+			done
+
+			rm $tmp_fil
+
+			if [[ "$one_line" -ne 0 ]]; then
+				ls -l "${query_path}" | grep -v total | awk -v "ssd=ssd_${ssd}" '{printf "%s\tALL\t%s\n",ssd,$0}' 
+			fi
+			# | grep -Ev 'RECY|System Volume' | 
+		else
+			printf "%s ### SSD has no dierctories for upload ###\n" "ssd_${ssd}"
+		fi
 	fi
 else
 	print_help

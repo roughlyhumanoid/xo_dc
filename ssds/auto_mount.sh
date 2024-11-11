@@ -1,9 +1,10 @@
 #!/bin/bash
 tail_log=$1
-source /home/xo-mark/scripts/ssd_mounts.sh
+# source /home/xo-mark/scripts/ssd_mounts.sh
+source /opt/xo_dc/ssds/ssd_mounts.sh
 log_fp='/var/log/xocean_data_centre/automount.log'
 #loop2 | /usr/bin/ts "DC, %b %d %H:%M:%S, " >> /var/log/xocean_data_centre/automount.log 2>&1 
-loop2 | /usr/bin/ts "DC, %b %d %H:%M:%S, " >> "${log_fp}"  2>&1 
+loop2 no_upload | /usr/bin/ts "DC, %b %d %H:%M:%S, " >> "${log_fp}"  2>&1 
 xrun_pid=$!
 
 if [[ "$tail_log" == "tail" ]]; then

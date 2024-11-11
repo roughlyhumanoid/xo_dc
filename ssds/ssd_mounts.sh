@@ -160,6 +160,16 @@ function ssd_unmount()
 
 function loop2()
 {
+	upload_cam=$1
+
+	if [[ "$upload_cam" == "no_upload" ]]; then
+		run_camera_upload=1
+		printf "Setting upload to no\n"
+	else
+		run_camera_upload=0
+		printf "Setting upload to yes\n"
+	fi
+
         get_ssd_mounts
         readarray -t ssd_list <<< $(get_ssd_mounts | awk '{print $2}')
 
@@ -176,7 +186,10 @@ function loop2()
                         ssd_dev_path=$(get_ssd_device_path $ARG)
                         mount_ssd $ARG $ssd_dev_path
                         sleep 5
-                        /opt/xo_dc/camera/run_cam.sh -s "$ARG" -r
+
+			if [[ "${run_camera_upload}" -eq 0 ]]; then
+                        	/opt/xo_dc/camera/run_cam.sh -s "$ARG" -r
+			fi
                 fi
 
                 get_ssd_attached $ARG

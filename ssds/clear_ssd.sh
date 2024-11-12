@@ -1,5 +1,6 @@
 #!/bin/bash
 ssd=$1
+force=$2
 tmpfil=$(mktemp)
 tmpfil="/tmp/ssd_${ssd}.tmpfil"
 sdir=/opt/xo_dc/ssds
@@ -28,6 +29,11 @@ function ssd_sum()
 			del_dir="/mnt/usb_drives/ssd_${ssd}/${mdir}"
 			printf "Run this command if you are sure...\n"
 			printf "\nsudo rm -rf %s\n\n" "$del_dir"
+
+			if [[ "$force" == "force" ]]; then
+				# sudo rm -rfI "$del_dir" 
+				sudo rm -rf "$del_dir" 
+			fi
 		fi
 	done < "${tmpfil}"
 }

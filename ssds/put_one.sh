@@ -45,10 +45,7 @@ function upload_ssd()
 	
 		aws s3 --profile dc_auto_camera \
 			sync "$this_source_subdir" "$this_dest_subdir" 
-			# --delete
 
-		#	--dryrun
-		# --debug \
 		sleep 1
 	done
 

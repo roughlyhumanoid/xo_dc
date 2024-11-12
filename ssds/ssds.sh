@@ -251,9 +251,9 @@ if [[ "$query_ssd" -eq 0 ]]; then
 				if [[ "${quiet}" -ne 0 ]]; then printf "%s\tChecking: ssd: %s, mission: %s\n" "$pref" "$this_ssd" "$subdir"; fi
 
 				if [[ "$one_line" -eq 0 ]]; then
-					"${ssd_dir}/mdsl/cc_disk_stats.sh" -H -o -q -p "${this_ssd}" -d -q -m "$subdir" | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
+					"${ssd_dir}/mdsl/cc_disk_stats.sh" -H -o -q -p "${this_ssd}" -d -q -m "$subdir" -D | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
 				else
-					"${ssd_dir}/mdsl/cc_disk_stats.sh" -p "${this_ssd}" -d -q -m "$subdir" | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
+					"${ssd_dir}/mdsl/cc_disk_stats.sh" -p "${this_ssd}" -d -q -m "$subdir" -D | awk -v "pref=$pref" '{printf "%-35s%s\n",pref,$0}' | awk NF
 				fi
 			done
 

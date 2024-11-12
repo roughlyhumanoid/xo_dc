@@ -46,6 +46,8 @@ function print_help()
         printf "      -------\t\t   -----------\n"
         help_line '-a' 'automount' 'Automounts all ssds.  Runs automatically every 10 mins.' 'Example usage:  ssds -a'
         printf "\n"
+        help_line '-C' 'Check processing' 'Shows running upload processes' 'Example ssds -C'
+	printf "\n"
         help_line '-e' 'ssd events' 'Shows ssd mount events.' 'Example usage:  ssds -e'
         printf "\n"
         help_line '-f' 'Diagnostics only: full ssd details list' '' 'Example usage:  ssds -f'
@@ -82,7 +84,7 @@ ssd_dir=/opt/xo_dc/ssds
 source "${ssd_dir}/ssd_mounts.sh"
 
 
-# while getopts "ade:gikKlqrs:St:vx:h" opt; do
+# while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
 while getopts "aACd:efi:jloqQs:uh" opt; do
   case $opt in
     A)
@@ -97,7 +99,9 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
 	ssd_command=$OPTARG
       ;;
     C)
-	check_sync=0
+	check_process=0
+	/opt/xo_dc/ssds/run_put_one.sh
+	exit 0
       ;;
     d)
 	device_name=$OPTARG
@@ -156,6 +160,12 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
       ;;
     o)
 	one_line=0
+      ;;
+    p)
+	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
+	printf "Running run_put_one.sh go\n"
+	/opt/xo_dc/ssds/run_put_one.sh go
+	exit 0
       ;;
     q)
         quiet=0

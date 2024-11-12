@@ -1,0 +1,10 @@
+# m h  dom mon dow   command
+*/10 * * * * /home/xo-mark/scripts/auto_mount.sh
+# 20 * * * * /opt/xo_dc/ssds/put_all.sh >> /tmp/put_all.log 2>&1
+
+30 1,13 * * * /opt/xo_dc/ssds/index_all.sh >> /var/log/xocean_data_centre/inventories/index_all.log 2>&1
+0 0,6,12,18 * * * /opt/xo_dc/ssds/ssd_info.sh
+5 0,6,12,18 * * * /opt/xo_dc/ssds/scan_all.sh find_inventory
+10 0,6,12,18 * * * /opt/xo_dc/ssds/scan_all.sh
+20 0,6,12,18 * * * /opt/xo_dc/ssds/scan_all.sh summary
+30 * * * * /opt/xo_dd/ssds/run_put_one.sh go >> /var/log/xocean_data_centre/inventories/run_put_one_go.log 2>&1

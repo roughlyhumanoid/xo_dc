@@ -1,0 +1,1000 @@
+ 1205  Nov 08 13:17:14 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .model] | @tsv'
+ 1206  Nov 08 13:17:30 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")'
+ 1207  Nov 08 13:18:09 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model] | @tsv'
+ 1208  Nov 08 13:19:31 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")'
+ 1209  Nov 08 13:24:09 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv'
+ 1210  Nov 08 13:28:00 exit
+ 1211  Nov 08 16:27:08 ssds
+ 1212  Nov 08 16:27:16 ssds -l
+ 1213  Nov 08 16:27:37 ssds -q -l
+ 1214  Nov 08 16:27:54 ssds -s 425
+ 1215  Nov 08 16:28:23 ls -l /mnt/usb_drives/
+ 1216  Nov 08 16:28:39 cd ssd_425
+ 1217  Nov 08 16:28:44 cd /mnt/usb_drives/
+ 1218  Nov 08 16:28:47 cd ssd_425
+ 1219  Nov 08 16:28:48 ls -l
+ 1220  Nov 08 16:35:07 ssds -s 425 -o
+ 1221  Nov 08 16:40:34 ls -l
+ 1222  Nov 08 16:46:51 ssds -j
+ 1223  Nov 08 16:47:05 history | jq
+ 1224  Nov 08 16:47:09 history | grep jq
+ 1225  Nov 08 16:47:16 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv'
+ 1226  Nov 08 16:48:33 cd /mnt/usb_drives/ssd_418
+ 1227  Nov 08 16:48:36 ls -l
+ 1228  Nov 08 16:48:44 ssds -j
+ 1229  Nov 08 16:57:23 :q!
+ 1230  Nov 08 16:57:24 exit
+ 1231  Nov 08 22:45:32 ssds -l
+ 1232  Nov 08 22:45:49 cdx
+ 1233  Nov 08 22:45:51 cd
+ 1234  Nov 08 22:45:55 vi .bashrc
+ 1235  Nov 08 22:46:08 sudo vi /etc/bash.bashrc 
+ 1236  Nov 08 22:46:54 cds
+ 1237  Nov 08 22:47:56 ddfd
+ 1238  Nov 08 22:47:59 ssds
+ 1239  Nov 08 22:48:05 bcompare
+ 1240  Nov 08 22:48:18 bcompare --version
+ 1241  Nov 08 22:49:13 man bcompare
+ 1242  Nov 08 22:49:18 which bcompare
+ 1243  Nov 08 22:50:07 netstat -natp
+ 1244  Nov 08 22:50:16 netstat -natlp
+ 1245  Nov 08 22:50:51 sudo su - 
+ 1246  Nov 08 23:14:12 cd
+ 1247  Nov 08 23:14:15 echo "xfce4-session" | tee .xsession
+ 1248  Nov 08 23:14:19 sudo su - 
+ 1249  Nov 08 23:20:55 ps -ef  | grep -i put
+ 1250  Nov 08 23:20:59 htop
+ 1251  Nov 08 23:21:13 cds
+ 1252  Nov 08 23:21:19 ssds
+ 1253  Nov 08 23:21:29 vi ssds
+ 1254  Nov 08 23:22:27 ssds -A
+ 1255  Nov 08 23:23:17 ssds -l
+ 1256  Nov 08 23:23:32 ./scan_all.sh summary
+ 1257  Nov 08 22:46:56 bash
+ 1258  Nov 11 10:30:21 ssds -l
+ 1259  Nov 11 10:30:26 cdx
+ 1260  Nov 11 10:30:27 cd ssds/
+ 1261  Nov 11 10:30:36 ./scan_all.sh summary
+ 1262  Nov 11 10:30:46 ./scan_all.sh
+ 1263  Nov 11 10:33:37 ps -ef | grep -i scan
+ 1264  Nov 11 10:33:41 htop
+ 1265  Nov 11 10:33:56 ps -ef | grep -i sync
+ 1266  Nov 11 10:34:06 df -Th
+ 1267  Nov 11 10:34:22 cd /mnt/usb_drives/ssd_435
+ 1268  Nov 11 10:34:25 ls -l
+ 1269  Nov 11 10:34:36 du -sh *
+ 1270  Nov 11 11:47:48 cdx
+ 1271  Nov 11 11:47:49 cd ssds
+ 1272  Nov 11 11:48:31 cdx
+ 1273  Nov 11 11:48:33 cd ssds
+ 1274  Nov 11 11:49:09 vi ./put_all.sh 
+ 1275  Nov 11 11:49:25 ls -lathr
+ 1276  Nov 11 11:49:43 cp ./put_all.sh ./put_one.sh
+ 1277  Nov 11 11:49:46 vi ./put_one.sh 
+ 1278  Nov 11 11:50:18 ./put_one.sh 
+ 1279  Nov 11 11:50:22 vi ./put_one.sh 
+ 1280  Nov 11 11:50:31 ./put_one.sh 
+ 1281  Nov 11 11:50:37 vi ./put_one.sh 
+ 1282  Nov 11 11:51:24 ./put_one.sh 
+ 1283  Nov 11 11:51:28 vi ./put_one.sh 
+ 1284  Nov 11 11:51:51 ./put_one.sh 
+ 1285  Nov 11 11:52:00 vi ./put_one.sh 
+ 1286  Nov 11 11:52:36 ./put_one.sh 407
+ 1287  Nov 11 11:52:41 vi ./put_one.sh 
+ 1288  Nov 11 11:52:56 ./put_one.sh 407
+ 1289  Nov 11 11:53:05 ssds -s 407
+ 1290  Nov 11 11:53:09 vi ./put_one.sh 
+ 1291  Nov 11 11:53:28 ./put_one.sh 407
+ 1292  Nov 11 11:53:39 vi ./put_one.sh 
+ 1293  Nov 11 11:53:43 ssds -s 407
+ 1294  Nov 11 11:47:55 ./scan_all.sh 
+ 1295  Nov 11 13:11:31 curl ifconfig.me
+ 1296  Nov 11 13:10:23 ./scan_all.sh 
+ 1297  Nov 11 13:14:04 ls -al
+ 1298  Nov 11 13:14:11 cd /opt/duc/
+ 1299  Nov 11 13:14:12 ls -l
+ 1300  Nov 11 13:14:14 cd dbs
+ 1301  Nov 11 13:14:14 ls
+ 1302  Nov 11 13:14:16 ls -al
+ 1303  Nov 11 13:14:35 cd /mnt/usb_drives/
+ 1304  Nov 11 13:14:36 ls
+ 1305  Nov 11 13:19:22 ls -al
+ 1306  Nov 11 13:19:32 cdx
+ 1307  Nov 11 13:19:33 cd ssds
+ 1308  Nov 11 13:23:11 ssds -l
+ 1309  Nov 11 13:23:16 ssds -q -l
+ 1310  Nov 11 13:24:14 cat /var/log/xocean_data_centre/scan_all.log 
+ 1311  Nov 11 13:24:21 cat /var/log/xocean_data_centre/scan_all.log | grep -i 427
+ 1312  Nov 11 13:24:49 cat /var/log/xocean_data_centre/scan_all.log | grep -i 441
+ 1313  Nov 11 13:25:06 cat /var/log/xocean_data_centre/scan_all.log | grep -i ssd_441
+ 1314  Nov 11 13:25:59 cat /var/log/xocean_data_centre/scan_all.log | grep -i ssd_407
+ 1315  Nov 11 13:26:58 cat /var/log/xocean_data_centre/scan_all.log | grep -i ssd_410
+ 1316  Nov 11 13:27:14 cd /mnt/usb_drives/ssd_407
+ 1317  Nov 11 13:27:15 ls -l
+ 1318  Nov 11 13:27:28 rm -rf X26_MISSION_20240809
+ 1319  Nov 11 13:27:37 sudo rm -rf X26_MISSION_20240809
+ 1320  Nov 11 13:27:43 ls -l
+ 1321  Nov 11 13:27:56 sudo rm -rf X26_MISSION_20240809_2
+ 1322  Nov 11 13:29:23 ls -lathr
+ 1323  Nov 11 13:29:28 sudo rm -rf X26_MISSION_20240814
+ 1324  Nov 11 13:29:38 cd ..
+ 1325  Nov 11 13:29:41 cd ssd_410
+ 1326  Nov 11 13:29:42 ls -al
+ 1327  Nov 11 13:29:51 cd ..
+ 1328  Nov 11 13:29:54 cd ssd_418
+ 1329  Nov 11 13:29:56 ls -al
+ 1330  Nov 11 13:30:13 ls -l
+ 1331  Nov 11 13:30:15 cd ..
+ 1332  Nov 11 13:30:21 cd ssd_425
+ 1333  Nov 11 13:30:22 ls -al
+ 1334  Nov 11 13:30:44 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_425
+ 1335  Nov 11 13:31:01 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_35
+ 1336  Nov 11 13:31:05 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_435
+ 1337  Nov 11 13:31:14 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_437
+ 1338  Nov 11 13:31:20 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_438
+ 1339  Nov 11 13:31:29 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_440
+ 1340  Nov 11 13:31:34 crontab -l
+ 1341  Nov 11 13:31:40 cat /tmp/put_all.log 
+ 1342  Nov 11 13:31:44 htop
+ 1343  Nov 11 13:31:59 ps -ef | grep -i aws
+ 1344  Nov 11 13:32:22 cdarc
+ 1345  Nov 11 13:32:30 cdx
+ 1346  Nov 11 13:32:31 ls
+ 1347  Nov 11 13:32:32 cd ssds
+ 1348  Nov 11 13:32:32 ls
+ 1349  Nov 11 13:32:34 ls -l
+ 1350  Nov 11 13:32:38 cd ..
+ 1351  Nov 11 13:32:45 find . -type f -name "*kill"
+ 1352  Nov 11 13:32:47 find . -type f -name "*kill*"
+ 1353  Nov 11 13:32:54 ls -al
+ 1354  Nov 11 13:32:58 history | grep kill
+ 1355  Nov 11 13:33:02 cdx
+ 1356  Nov 11 13:33:04 cdarc
+ 1357  Nov 11 13:33:13 cdc
+ 1358  Nov 11 13:33:17 cd bash/
+ 1359  Nov 11 13:33:18 ls
+ 1360  Nov 11 13:33:28 ./kill_old_procs.sh aws 86400
+ 1361  Nov 11 13:33:35 ./kill_old_procs.sh 
+ 1362  Nov 11 13:33:46 vi ./kill_old_procs.sh 
+ 1363  Nov 11 13:33:57 ps -ef | grep -i aws
+ 1364  Nov 11 13:34:05 ./kill_old_procs.sh 'aws s3' 86400
+ 1365  Nov 11 13:34:28 ./kill_old_procs.sh 'dc_auto_camera' 86400
+ 1366  Nov 11 13:34:48 ./kill_old_procs.sh dc_auto_camera 86400
+ 1367  Nov 11 13:34:52 vi ./kill_old_procs.sh 
+ 1368  Nov 11 13:35:45 ./kill_old_procs.sh dc_auto_camera 86400
+ 1369  Nov 11 13:36:46 vi ./kill_old_procs.sh 
+ 1370  Nov 11 13:37:13 history | grep kill
+ 1371  Nov 11 13:37:28 cd ..
+ 1372  Nov 11 13:37:33 find . -type f -name "kill"
+ 1373  Nov 11 13:54:03 cdc
+ 1374  Nov 11 13:54:04 cd bash
+ 1375  Nov 11 13:54:05 ls
+ 1376  Nov 11 13:54:15 ./kill_old_procs.sh 
+ 1377  Nov 11 13:54:24 vi ./kill_old_procs.sh 
+ 1378  Nov 11 13:55:35 ls -l
+ 1379  Nov 11 13:55:42 ps -ef | grep -i aws
+ 1380  Nov 11 13:55:59 ps -eo user,pid,command
+ 1381  Nov 11 13:56:04 ps -eo user,pid,command | grep -i aws
+ 1382  Nov 11 13:56:12 ps -eo user,pid,command | grep -i dc_auto_camera
+ 1383  Nov 11 13:56:22 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $1}'
+ 1384  Nov 11 13:56:26 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}'
+ 1385  Nov 11 13:56:38 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}' | xargs kill -9 {} \;
+ 1386  Nov 11 13:56:41 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}' | xargs kill -9 {} 
+ 1387  Nov 11 13:56:46 man xargs
+ 1388  Nov 11 13:57:43 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}' | xargs echo
+ 1389  Nov 11 13:57:49 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}' | xargs kill
+ 1390  Nov 11 13:58:34 ps -eo user,pid,command | grep -i dc_auto_camera | awk '{print $2}' 
+ 1391  Nov 11 13:58:40 ps -ef | grep -i aws
+ 1392  Nov 11 13:58:48 cdx
+ 1393  Nov 11 13:58:49 cd ssds
+ 1394  Nov 11 14:42:54 ps -ef  | grep -i aws
+ 1395  Nov 11 14:43:07 cd
+ 1396  Nov 11 14:43:10 cd .aws
+ 1397  Nov 11 14:43:12 ls -al
+ 1398  Nov 11 14:43:14 cat config 
+ 1399  Nov 11 14:43:28 ps -ef | grep -i aws
+ 1400  Nov 11 14:43:33 kill 72246
+ 1401  Nov 11 14:43:35 ps -ef | grep -i aws
+ 1402  Nov 11 14:43:44 crontab -l
+ 1403  Nov 11 14:43:50 cd
+ 1404  Nov 11 14:43:51 cd scripts/
+ 1405  Nov 11 14:43:52 vi auto_mount.sh 
+ 1406  Nov 11 14:44:12 cdx
+ 1407  Nov 11 14:44:13 cd ssds
+ 1408  Nov 11 14:44:15 vi ssd_mounts.sh 
+ 1409  Nov 11 14:45:58 vi auto_mount.sh 
+ 1410  Nov 11 14:46:08 vi ssd_mounts.sh 
+ 1411  Nov 11 14:47:39 ./auto_mount.sh 
+ 1412  Nov 11 14:48:04 sudo chown xo-mark:xo-mark /var/log/xocean_data_centre/automount.*
+ 1413  Nov 11 14:50:31 ls -al
+ 1414  Nov 11 14:50:41 ./auto_mount.sh 
+ 1415  Nov 11 14:50:44 vi .//auto_mount.sh 
+ 1416  Nov 11 14:51:00 cat /var/log/xocean_data_centre/automount.log 
+ 1417  Nov 11 14:51:07 tail -n 10 /var/log/xocean_data_centre/automount.log 
+ 1418  Nov 11 14:51:17 vi ssd_mounts.sh 
+ 1419  Nov 11 14:51:28 ./auto_mount.sh 
+ 1420  Nov 11 14:51:34 cat ./auto_mount.sh 
+ 1421  Nov 11 14:51:38 vi ./auto_mount.sh 
+ 1422  Nov 11 14:51:58 diff ./ssd_mounts.sh /home/xo-mark/scripts/ssd_mounts.sh 
+ 1423  Nov 11 14:52:20 vi ./auto_mount.sh 
+ 1424  Nov 11 14:52:50 ./auto_mount.sh 
+ 1425  Nov 11 14:53:01 tail -n 100 /var/log/xocean_data_centre/automount.log 
+ 1426  Nov 11 14:53:06 vi ./auto_mount.sh 
+ 1427  Nov 11 14:53:20 ./auto_mount.sh 
+ 1428  Nov 11 14:53:22 tail -n 100 /var/log/xocean_data_centre/automount.log 
+ 1429  Nov 11 14:53:32 vi ssd_mounts.sh 
+ 1430  Nov 11 14:53:38 ./auto_mount.sh 
+ 1431  Nov 11 14:53:41 tail -n 100 /var/log/xocean_data_centre/automount.log 
+ 1432  Nov 11 14:54:03 ssds -q -l
+ 1433  Nov 11 14:54:28 ssds -s 425
+ 1434  Nov 11 14:55:44 cd /mnt/usb_drives/ssd_425
+ 1435  Nov 11 14:55:45 ls -l
+ 1436  Nov 11 14:55:58 sudo rm -rf X21_MISSION_20240*
+ 1437  Nov 11 14:56:00 ls -al
+ 1438  Nov 11 14:56:01 cd ..
+ 1439  Nov 11 14:56:17 ssds -s 427
+ 1440  Nov 11 14:56:25 ls -l
+ 1441  Nov 11 14:57:00 cat /var/log/xocean_data_centre/scan_all.log | grep ssd_427
+ 1442  Nov 11 14:57:52 ls -al
+ 1443  Nov 11 14:57:58 cd 440
+ 1444  Nov 11 14:57:59 ls -al
+ 1445  Nov 11 14:58:01 cd ssd_440
+ 1446  Nov 11 14:58:01 ls
+ 1447  Nov 11 14:58:03 ls -al
+ 1448  Nov 11 14:58:11 cd X26_MISSION_20240814/
+ 1449  Nov 11 14:58:12 ls -al
+ 1450  Nov 11 14:58:26 cd 90003-MULT-UKX-BATH-EYE/
+ 1451  Nov 11 14:58:27 ls -l
+ 1452  Nov 11 14:58:34 find . -type f | wc -l
+ 1453  Nov 11 14:58:37 cd ..
+ 1454  Nov 11 14:58:39 find . -type f | wc -l
+ 1455  Nov 11 14:58:49 cd 90003-MULT-UKX-BATH-EYE/
+ 1456  Nov 11 14:58:51 find . -type f | wc -l
+ 1457  Nov 11 14:58:53 find . -type f 
+ 1458  Nov 11 14:59:01 find . -type f | stat 
+ 1459  Nov 11 14:59:13 find . -type f | exec stat {} \;
+ 1460  Nov 11 14:59:23 find . -type f -exec stat {} \;
+ 1461  Nov 11 14:59:26 man stat
+ 1462  Nov 11 15:00:07 find . -type f -exec stat --terse {} \;
+ 1463  Nov 11 15:00:30 man stat
+ 1464  Nov 11 15:01:02 find . -type f -exec stat --terse {} \;
+ 1465  Nov 11 15:01:05 cd ..
+ 1466  Nov 11 15:02:03 find . -type f -exec stat --terse {} >> /tmp/ssd_440.file.list \; &
+ 1467  Nov 11 15:02:13 tail -f /tmp/ssd_440.file.list 
+ 1468  Nov 11 15:02:30 cat /tmp/ssd_440.file.list 
+ 1469  Nov 11 15:02:57 cd
+ 1470  Nov 11 15:02:58 cdx
+ 1471  Nov 11 15:03:01 cd ssds
+ 1472  Nov 11 15:03:07 vi get_file_inv.sh
+ 1473  Nov 11 15:03:45 which find
+ 1474  Nov 11 15:03:48 vi get_file_inv.sh
+ 1475  Nov 11 15:05:22 mkdir /var/log/xocean_data_centre/inventories
+ 1476  Nov 11 15:05:24 vi get_file_inv.sh
+ 1477  Nov 11 15:08:47 ./get_file_inv.sh 440
+ 1478  Nov 11 15:08:54 chmod 755 ./get_file_inv.sh 
+ 1479  Nov 11 15:08:56 ./get_file_inv.sh 440
+ 1480  Nov 11 15:09:02 vi get_file_inv.sh
+ 1481  Nov 11 15:09:27 ./get_file_inv.sh 440
+ 1482  Nov 11 15:09:32 vi get_file_inv.sh
+ 1483  Nov 11 15:10:30 ./get_file_inv.sh 440
+ 1484  Nov 11 15:10:34 vi get_file_inv.sh
+ 1485  Nov 11 15:12:11 ./get_file_inv.sh 440
+ 1486  Nov 11 15:12:15 vi get_file_inv.sh
+ 1487  Nov 11 15:12:28 which find
+ 1488  Nov 11 15:12:29 vi get_file_inv.sh
+ 1489  Nov 11 15:12:49 which find
+ 1490  Nov 11 15:12:52 ./get_file_inv.sh 440
+ 1491  Nov 11 15:13:08 cat /var/log/xocean_data_centre/inventories/ssd_440_2024-11-11_\$H12.file.list 
+ 1492  Nov 11 15:13:14 vi get_file_inv.sh
+ 1493  Nov 11 15:13:29 ./get_file_inv.sh 440
+ 1494  Nov 11 15:13:44 cat /var/log/xocean_data_centre/inventories/ssd_440_2024-11-11_1513.file.list | wc -l
+ 1495  Nov 11 15:13:47 vi get_file_inv.sh
+ 1496  Nov 11 15:14:17 ./get_file_inv.sh 440
+ 1497  Nov 11 15:14:21 bash -x ./get_file_inv.sh 440
+ 1498  Nov 11 15:15:11 rm /var/log/xocean_data_centre/inventories/
+ 1499  Nov 11 15:15:15 rm /var/log/xocean_data_centre/inventories/ssd_440_2024-11-11_*
+ 1500  Nov 11 15:15:18 ./get_file_inv.sh 440
+ 1501  Nov 11 15:15:35 cat /var/log/xocean_data_centre/inventories/ssd_440_2024-11-11_1515.file.list | wc -l
+ 1502  Nov 11 15:15:41 vi get_file_inv.sh
+ 1503  Nov 11 15:15:55 rm /var/log/xocean_data_centre/inventories/ssd_440_2024-11-11_*
+ 1504  Nov 11 15:15:58 ./get_file_inv.sh 440
+ 1505  Nov 11 15:16:19 ssds -q -l
+ 1506  Nov 11 15:16:25 ./get_file_inv.sh 438
+ 1507  Nov 11 15:16:38 ./get_file_inv.sh 437
+ 1508  Nov 11 15:17:24 ./get_file_inv.sh 435
+ 1509  Nov 11 15:18:25 ./get_file_inv.sh 428
+ 1510  Nov 11 15:18:46 ./get_file_inv.sh 425
+ 1511  Nov 11 15:18:54 ./get_file_inv.sh 418
+ 1512  Nov 11 15:18:57 ./get_file_inv.sh 410
+ 1513  Nov 11 15:19:07 ./get_file_inv.sh 407
+ 1514  Nov 11 15:19:37 ls -lathr
+ 1515  Nov 11 15:19:58 vi ./scan_all.sh 
+ 1516  Nov 11 15:21:21 ./scan_all.sh find_inventory
+ 1517  Nov 11 15:21:25 vi ./scan_all.sh 
+ 1518  Nov 11 15:21:40 ./scan_all.sh find_inventory
+ 1519  Nov 11 15:21:42 vi ./scan_all.sh 
+ 1520  Nov 11 15:21:49 ./scan_all.sh find_inventory
+ 1521  Nov 11 15:22:06 vi ./scan_all.sh 
+ 1522  Nov 11 15:23:04 ls -lathr /var/log/xocean_data_centre/inventories/
+ 1523  Nov 11 15:23:09 ./scan_all.sh find_inventory
+ 1524  Nov 11 15:34:42 ls -lathr /var/log/xocean_data_centre/inventories/
+ 1525  Nov 11 15:35:19 ssds -s 428
+ 1526  Nov 11 15:35:46 vi clear_ssd.sh
+ 1527  Nov 11 15:37:51 chmod 755 ./clear_ssd.sh 
+ 1528  Nov 11 15:37:55 ./clear_ssd.sh 407
+ 1529  Nov 11 15:38:05 which tee
+ 1530  Nov 11 15:38:09 man tee
+ 1531  Nov 11 15:38:16 tee /?
+ 1532  Nov 11 15:38:20 tee --help
+ 1533  Nov 11 15:38:32 vi clear_ssd.sh
+ 1534  Nov 11 15:39:05 which ssds
+ 1535  Nov 11 15:39:08 vi clear_ssd.sh
+ 1536  Nov 11 15:39:13 clear
+ 1537  Nov 11 15:39:23 ./clear_ssd.sh 407
+ 1538  Nov 11 15:39:48 vi clear_ssd.sh
+ 1539  Nov 11 15:39:59 ./clear_ssd.sh 407
+ 1540  Nov 11 15:40:14 vi clear_ssd.sh
+ 1541  Nov 11 15:40:51 ./clear_ssd.sh 407
+ 1542  Nov 11 15:41:01 vi clear_ssd.sh
+ 1543  Nov 11 15:41:19 /opt/xo_dc/ssds/ssds -s 407
+ 1544  Nov 11 15:41:39 vi clear_ssd.sh
+ 1545  Nov 11 15:41:53 ./clear_ssd.sh 407
+ 1546  Nov 11 15:42:05 vi clear_ssd.sh
+ 1547  Nov 11 15:42:27 ./clear_ssd.sh 407
+ 1548  Nov 11 15:42:35 vi clear_ssd.sh
+ 1549  Nov 11 15:42:45 ./clear_ssd.sh 407
+ 1550  Nov 11 15:42:48 vi clear_ssd.sh
+ 1551  Nov 11 15:42:56 ssds -q -l
+ 1552  Nov 11 15:43:05 ./clear_ssd.sh 438
+ 1553  Nov 11 15:43:30 vi ./scan_all.sh 
+ 1554  Nov 11 15:43:42 vi clear_ssd.sh
+ 1555  Nov 11 15:43:51 ./clear_ssd.sh 438
+ 1556  Nov 11 15:44:51 ssds -q -l
+ 1557  Nov 11 15:44:58 ./clear_ssd.sh 428
+ 1558  Nov 11 15:45:13 cat /tmp/ssd_428.tmpfil 
+ 1559  Nov 11 15:45:45 cat /tmp/ssd_428.tmpfil | awk '{print $7}'
+ 1560  Nov 11 15:45:59 vi ./clear_ssd.sh 
+ 1561  Nov 11 15:47:58 ./clear_ssd.sh 428
+ 1562  Nov 11 15:48:05 vi ./clear_ssd.sh 
+ 1563  Nov 11 15:48:59 ./clear_ssd.sh 428
+ 1564  Nov 11 15:49:13 vi ./clear_ssd.sh 
+ 1565  Nov 11 15:51:08 ./clear_ssd.sh 428
+ 1566  Nov 11 15:51:12 vi ./clear_ssd.sh 
+ 1567  Nov 11 15:51:57 ./clear_ssd.sh 428
+ 1568  Nov 11 15:52:08 vi ./clear_ssd.sh 
+ 1569  Nov 11 15:52:42 ./clear_ssd.sh 428
+ 1570  Nov 11 15:52:49 vi ./clear_ssd.sh 
+ 1571  Nov 11 15:54:27 ./clear_ssd.sh 428
+ 1572  Nov 11 15:54:44 vi ./clear_ssd.sh 
+ 1573  Nov 11 15:54:55 ./clear_ssd.sh 428
+ 1574  Nov 11 15:55:06 cat /tmp/ssd_428.tmpfil 
+ 1575  Nov 11 15:55:21 vi ./clear_ssd.sh 
+ 1576  Nov 11 15:56:22 ./clear_ssd.sh 428
+ 1577  Nov 11 15:56:26 vi ./clear_ssd.sh 
+ 1578  Nov 11 15:57:10 ./clear_ssd.sh 428
+ 1579  Nov 11 15:57:24 vi ./clear_ssd.sh 
+ 1580  Nov 11 15:58:36 ./clear_ssd.sh 428
+ 1581  Nov 11 15:59:09 vi ./clear_ssd.sh 
+ 1582  Nov 11 16:00:13 ./clear_ssd.sh 428
+ 1583  Nov 11 16:00:22 vi ./clear_ssd.sh 
+ 1584  Nov 11 16:00:50 ./clear_ssd.sh 428
+ 1585  Nov 11 16:00:58 vi ./clear_ssd.sh 
+ 1586  Nov 11 16:01:24 ./clear_ssd.sh 428
+ 1587  Nov 11 16:01:52 vi ./clear_ssd.sh 
+ 1588  Nov 11 16:02:07 ./clear_ssd.sh 428
+ 1589  Nov 11 16:02:13 vi ./clear_ssd.sh 
+ 1590  Nov 11 16:03:01 ./clear_ssd.sh 428
+ 1591  Nov 11 16:03:05 vi ./clear_ssd.sh 
+ 1592  Nov 11 16:03:19 cat /tmp/ssd_440.file.list 
+ 1593  Nov 11 16:03:30 vi ./clear_ssd.sh 
+ 1594  Nov 11 16:04:27 cat /tmp/ssd_428.tmpfil 
+ 1595  Nov 11 16:04:31 vi ./clear_ssd.sh 
+ 1596  Nov 11 16:05:33 cat /tmp/ssd_428.tmpfil 
+ 1597  Nov 11 16:05:34 vi ./clear_ssd.sh 
+ 1598  Nov 11 16:05:53 ./clear_ssd.sh 428
+ 1599  Nov 11 16:05:59 vi ./clear_ssd.sh 
+ 1600  Nov 11 16:06:53 clear
+ 1601  Nov 11 16:06:55 ./clear_ssd.sh 428
+ 1602  Nov 11 16:07:06 rm -rf /mnt/usb_drives/ssd_428/X29_MISSION_20240920
+ 1603  Nov 11 16:07:12 vi ./clear_ssd.sh 
+ 1604  Nov 11 16:07:19 ./clear_ssd.sh 428
+ 1605  Nov 11 16:07:27 sudo rm -rf /mnt/usb_drives/ssd_428/X29_MISSION_20240920
+ 1606  Nov 11 16:07:46 ls -l /mnt/usb_drives/ssd_428/
+ 1607  Nov 11 16:07:57 ssds -q -l
+ 1608  Nov 11 16:08:03 htop
+ 1609  Nov 11 16:08:09 ps -ef  | grep -i aws
+ 1610  Nov 11 16:08:19 ssds -s 440
+ 1611  Nov 11 16:08:26 ./put_one.sh 440
+ 1612  Nov 11 16:08:42 cat ./put_one.sh
+ 1613  Nov 11 16:08:58 ./put_one.sh 440 >> /var/log/xocean_data_centre/put_one_440.log 2>&1 &
+ 1614  Nov 11 16:09:10 ssdss -s 440
+ 1615  Nov 11 16:09:16 ssds -s 440
+ 1616  Nov 11 16:09:36 tail -f /var/log/xocean_data_centre/put_one_440.log 
+ 1617  Nov 11 16:09:43 ssds -s 440
+ 1618  Nov 11 16:10:02 ls -l /mnt/usb_drives/ssd_440/
+ 1619  Nov 11 16:10:31 ssds -s 440
+ 1620  Nov 11 16:10:56 ssds -q -l
+ 1621  Nov 11 16:11:01 ssds -s 438
+ 1622  Nov 11 16:11:09 ssds -s 437
+ 1623  Nov 11 16:11:38 vi ./run_put_one.sh
+ 1624  Nov 11 16:12:27 chmod 755 ./run_put_one.sh 
+ 1625  Nov 11 16:24:18 ls -lathr
+ 1626  Nov 11 16:24:21 ssds -q -l
+ 1627  Nov 11 16:24:34 cd ssds
+ 1628  Nov 11 16:24:36 cdx
+ 1629  Nov 11 16:24:37 cd ssds
+ 1630  Nov 11 16:24:39 vi ./auto_mount.sh 
+ 1631  Nov 11 16:24:56 htop
+ 1632  Nov 11 16:25:12 ps -ef | grep -i aws
+ 1633  Nov 11 16:26:11 ssds -s 440
+ 1634  Nov 11 16:26:38 tail -f /var/log/xocean_data_centre/put_one_440.log 
+ 1635  Nov 11 16:26:54 history | grep put
+ 1636  Nov 11 16:26:59 ps -ef | grep put
+ 1637  Nov 11 16:27:08 crontab -e
+ 1638  Nov 11 16:27:20 kill 190746
+ 1639  Nov 11 16:27:26 kill 285978
+ 1640  Nov 11 16:27:29 ps -ef | grep put
+ 1641  Nov 11 16:27:34 kill 190748
+ 1642  Nov 11 16:27:35 ps -ef | grep put
+ 1643  Nov 11 16:27:42 kill 285980
+ 1644  Nov 11 16:27:43 ps -ef | grep put
+ 1645  Nov 11 16:28:00 ps -ef | grep -i aws
+ 1646  Nov 11 16:28:09 kill 286652
+ 1647  Nov 11 16:28:13 kill 286642
+ 1648  Nov 11 16:28:19 ps -ef | grep -i aws
+ 1649  Nov 11 16:28:27 kill 258882
+ 1650  Nov 11 16:28:30 ps -ef | grep -i aws
+ 1651  Nov 11 16:28:32 clear
+ 1652  Nov 11 16:28:42 vi ./kill_all_aws.sh
+ 1653  Nov 11 16:29:13 chmod 755  ./kill_all_aws.sh
+ 1654  Nov 11 16:29:15 ./kill_all_aws.sh 
+ 1655  Nov 11 16:29:24 ps -eo user,pid,ppid,command
+ 1656  Nov 11 16:29:30 ps -eo user,pid,ppid,cmd,command
+ 1657  Nov 11 16:29:37 ps -eo user,pid,ppid,cmd,command | grep aws
+ 1658  Nov 11 16:29:48 ssds -s 440
+ 1659  Nov 11 16:29:57 ./run_put_one.sh 440
+ 1660  Nov 11 16:30:09 tail -f /var/log/xocean_data_centre/put_one_440.log 
+ 1661  Nov 11 16:30:45 ssds -s 428
+ 1662  Nov 11 17:01:10 ps -ef | grep -i aws
+ 1663  Nov 11 17:01:33 vi ./put_one.sh 
+ 1664  Nov 11 17:01:58 grep while *.sh
+ 1665  Nov 11 17:02:02 vi ssds.sh 
+ 1666  Nov 11 17:02:20 vi ./put_one.sh 
+ 1667  Nov 11 17:02:34 vi ssds.sh 
+ 1668  Nov 11 17:02:45 vi ./put_one.sh 
+ 1669  Nov 11 17:04:44 grep shift *.sh
+ 1670  Nov 11 17:04:49 vi ssds.sh 
+ 1671  Nov 11 17:05:15 cdarc
+ 1672  Nov 11 17:05:19 grep shift *.sh
+ 1673  Nov 11 17:05:23 vi arc.sh 
+ 1674  Nov 11 17:05:39 cdx
+ 1675  Nov 11 17:05:40 cd ssds
+ 1676  Nov 11 17:05:50 vi ./put_one.sh 
+ 1677  Nov 11 17:06:05 cdarc
+ 1678  Nov 11 17:06:08 grep shift *.sh
+ 1679  Nov 11 17:06:12 vi arc.sh 
+ 1680  Nov 11 17:06:19 cdx
+ 1681  Nov 11 17:06:20 cd ssds
+ 1682  Nov 11 17:06:24 vi ./put_one.sh 
+ 1683  Nov 11 17:07:28 ./put_one.sh 490
+ 1684  Nov 11 17:07:34 ./put_one.sh -s 490
+ 1685  Nov 11 17:07:37 vi ./put_one.sh 
+ 1686  Nov 11 17:07:58 git status
+ 1687  Nov 11 17:08:00 git add *.sh
+ 1688  Nov 11 17:08:02 git status
+ 1689  Nov 11 17:08:05 rm ]
+ 1690  Nov 11 17:08:08 cat event.info 
+ 1691  Nov 11 17:08:10 rm event.info 
+ 1692  Nov 11 17:08:11 ls -l
+ 1693  Nov 11 17:08:13 git status
+ 1694  Nov 11 17:21:25 git commit -m "added all this stuff"
+ 1695  Nov 11 17:21:26 git push
+ 1696  Nov 11 17:21:33 ssds -s 440
+ 1697  Nov 11 17:22:00 exit
+ 1698  Nov 11 22:03:24 cat /var/log/xocean_data_centre/scan_all.log 
+ 1699  Nov 11 22:03:42 crontab -l
+ 1700  Nov 11 22:03:50 crontab -e
+ 1701  Nov 11 22:04:06 cdx
+ 1702  Nov 11 22:04:08 cd ssds
+ 1703  Nov 11 22:04:10 cat ./scan_all.sh 
+ 1704  Nov 11 22:04:40 ./scan_all.sh &
+ 1705  Nov 11 22:05:29 history | grep run
+ 1706  Nov 11 22:05:43 ./run_put_one.sh 438
+ 1707  Nov 11 22:05:56 cat /var/log/xocean_data_centre/scan_all.log 
+ 1708  Nov 11 22:06:09 ls -lathr
+ 1709  Nov 11 22:06:17 cat ./clear_ssd.sh 
+ 1710  Nov 11 22:06:29 vi clear_ssd.sh 
+ 1711  Nov 11 22:09:51 ssds -q -l
+ 1712  Nov 11 22:10:02 ./scan_all.sh summarise
+ 1713  Nov 11 22:10:36 ./run_put_one.sh 437
+ 1714  Nov 11 22:18:00 crontab -e
+ 1715  Nov 11 22:18:59 cat ./scan_all.sh 
+ 1716  Nov 11 22:19:05 crontab -e
+ 1717  Nov 11 22:19:13 crontab -l
+ 1718  Nov 11 22:19:21 30 8,20 * * * /opt/xo_dc/ssds/scan_all.sh summary
+ 1719  Nov 11 22:19:26 /opt/xo_dc/ssds/scan_all.sh summary
+ 1720  Nov 11 22:19:48 crontab -l
+ 1721  Nov 11 22:19:54 history | grep -i inv
+ 1722  Nov 11 22:20:07 crontab -e
+ 1723  Nov 11 22:21:30 ps -ef | grep -i aws
+ 1724  Nov 11 22:21:42 ps -ef | grep -i 'aws s3 --profile'
+ 1725  Nov 11 22:21:47 ps -ef | grep -i 'aws s3 --profile' | grep -v grep
+ 1726  Nov 11 22:22:04 kill_old_procs.sh 
+ 1727  Nov 11 22:22:15 vi kill_old_procs.sh 
+ 1728  Nov 11 22:22:22 which kill_old_procs.sh 
+ 1729  Nov 11 22:22:32 vi $(which kill_old_procs.sh )
+ 1730  Nov 11 22:23:34 history | grep kill
+ 1731  Nov 11 22:23:55 cdarc
+ 1732  Nov 11 22:23:59 cdc
+ 1733  Nov 11 22:24:03 cd bash 
+ 1734  Nov 11 22:24:09 ls
+ 1735  Nov 11 22:24:15 ./kill_old_procs.sh 
+ 1736  Nov 11 22:24:21 ./kill_old_procs.sh put_all
+ 1737  Nov 11 22:24:27 vi ./kill_old_procs.sh 
+ 1738  Nov 11 22:24:38 grep kill *sh
+ 1739  Nov 11 22:24:42 grep kill *.sh
+ 1740  Nov 11 22:24:50 ls -lathr
+ 1741  Nov 11 22:25:02 vi kill_old_procs.sh 
+ 1742  Nov 11 22:26:26 cdarc
+ 1743  Nov 11 22:26:28 cd fsx/
+ 1744  Nov 11 22:26:29 ls
+ 1745  Nov 11 22:26:32 ls -l
+ 1746  Nov 11 22:26:34 ./kill_old_procs 
+ 1747  Nov 11 22:26:42 ./kill_old_procs put_all 86400
+ 1748  Nov 11 22:26:54 vi ./kill_old_procs 
+ 1749  Nov 11 22:27:46 ./kill_old_procs put_all 86400
+ 1750  Nov 11 22:28:04 ./kill_old_procs aws 86400
+ 1751  Nov 11 22:28:12 ps -ef | grep -i aws
+ 1752  Nov 11 22:28:21 ./kill_old_procs dc_auto_camera 86400
+ 1753  Nov 11 22:28:30 vi ./kill_old_procs 
+ 1754  Nov 11 22:28:55 ./kill_old_procs dc_auto_camera 86400
+ 1755  Nov 11 22:29:01 vi ./kill_old_procs 
+ 1756  Nov 11 22:29:22 ./kill_old_procs dc_auto_camera 86400
+ 1757  Nov 11 22:29:29 vi ./kill_old_procs 
+ 1758  Nov 11 22:30:18 ./kill_old_procs dc_auto_camera 86400
+ 1759  Nov 11 22:30:23 vi ./kill_old_procs 
+ 1760  Nov 11 22:31:45 ./kill_old_procs dc_auto_camera 86400
+ 1761  Nov 11 22:31:49 vi ./kill_old_procs 
+ 1762  Nov 11 22:32:13 ./kill_old_procs dc_auto_camera 86400
+ 1763  Nov 11 22:32:27 vi ./kill_old_procs 
+ 1764  Nov 11 22:32:51 clear
+ 1765  Nov 11 22:32:54 ./kill_old_procs dc_auto_camera 86400
+ 1766  Nov 11 22:33:04 q!
+ 1767  Nov 11 22:33:08 vi ./kill_old_procs 
+ 1768  Nov 11 22:34:58 ./kill_old_procs dc_auto_camera 86400
+ 1769  Nov 11 22:35:05 vi ./kill_old_procs 
+ 1770  Nov 11 22:36:43 ./kill_old_procs dc_auto_camera 86400
+ 1771  Nov 11 22:37:07 readlink -e ./kill_old_procs 
+ 1772  Nov 11 22:37:53 ln -s $(readlink -e ./kill_old_procs ) /opt/xo_dc/ssds/kill_old_ps
+ 1773  Nov 11 22:37:55 cdx
+ 1774  Nov 11 22:37:56 cd ssds
+ 1775  Nov 11 22:37:58 ls -al
+ 1776  Nov 11 22:38:10 ps -ef | grep -i put
+ 1777  Nov 11 22:38:13 htop
+ 1778  Nov 11 22:38:22 ssds -q -l
+ 1779  Nov 11 22:38:35 ssds -s 435
+ 1780  Nov 11 22:38:53 ./run_put_one.sh 435
+ 1781  Nov 12 09:25:53 ssds -j
+ 1782  Nov 12 09:26:06 history | grep 'ssds -j'
+ 1783  Nov 12 09:26:23 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")
+ 1784  Nov 12 09:26:26 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")'
+ 1785  Nov 12 09:26:29 cdx
+ 1786  Nov 12 09:26:30 cd ssds
+ 1787  Nov 12 09:26:31 ls -l
+ 1788  Nov 12 09:26:37 vi ssd_info.sh
+ 1789  Nov 12 09:27:02 chmod 755 ./ssd_info.sh 
+ 1790  Nov 12 09:27:05 ./ssd_info.sh 
+ 1791  Nov 12 09:27:10 vi ssd_info.sh
+ 1792  Nov 12 09:31:10 ls -l /var/log/xocean_data_centre/inventories/
+ 1793  Nov 12 09:31:17 vi ssd_info.sh
+ 1794  Nov 12 09:32:27 ./ssd_info.sh 
+ 1795  Nov 12 09:32:30 vi ssd_info.sh
+ 1796  Nov 12 09:32:45 hostname
+ 1797  Nov 12 09:32:47 ./ssd_info.sh 
+ 1798  Nov 12 09:32:55 ls -lathr /var/log/xocean_data_centre/inventories/
+ 1799  Nov 12 09:33:10 history | grep 'ssds -j'
+ 1800  Nov 12 09:33:20 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv'
+ 1801  Nov 12 09:33:57 vi ssd_info.sh
+ 1802  Nov 12 09:35:45 ./ssd_info.sh 
+ 1803  Nov 12 09:35:53 ls -lathr /var/log/xocean_data_centre/inventories/
+ 1804  Nov 12 09:36:07 cat /var/log/xocean_data_centre/inventories/ssd_info_xodc_2024-11-12_0935.tsv 
+ 1805  Nov 12 09:36:17 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv'
+ 1806  Nov 12 09:36:24 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts
+ 1807  Nov 12 09:36:27 man ts
+ 1808  Nov 12 09:36:44 man strfttime
+ 1809  Nov 12 09:36:46 man ts
+ 1810  Nov 12 09:36:53 man strftime
+ 1811  Nov 12 09:37:36 man ts
+ 1812  Nov 12 09:38:01 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts "%b %d %H:%M:%S"
+ 1813  Nov 12 09:38:08 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts "%b %d %H:%M:%S %s"
+ 1814  Nov 12 09:38:19 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts "%Y %d %H:%M:%S %s"
+ 1815  Nov 12 09:38:28 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts "%Y-%m-%d %H:%M:%S %s"
+ 1816  Nov 12 09:38:57 vi ssd_info.sh
+ 1817  Nov 12 09:39:52 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @tsv' | /usr/bin/ts "%Y-%m-%d %H:%M:%S %s"
+ 1818  Nov 12 09:39:59 ./ssd_info.sh 
+ 1819  Nov 12 09:40:02 vi ssd_info.sh
+ 1820  Nov 12 09:41:34 ./ssd_info.sh 
+ 1821  Nov 12 09:41:37 vi ssd_info.sh
+ 1822  Nov 12 09:42:11 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv'
+ 1823  Nov 12 09:42:25 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | ctsv' | /usr/bin/ts "%Y-%m-%d %H:%M:%S %s"
+ 1824  Nov 12 09:42:31 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | csv' | /usr/bin/ts "%Y-%m-%d %H:%M:%S %s"
+ 1825  Nov 12 09:42:38 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d %H:%M:%S %s"
+ 1826  Nov 12 09:42:56 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d,%H:%M:%S,%s"
+ 1827  Nov 12 09:43:07 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d,%H:%M:%S,%s,"
+ 1828  Nov 12 09:44:03 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d,%H:%M:%S,%s," | sed 's/, "/,"/g'
+ 1829  Nov 12 09:44:16 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d,%H:%M:%S,%s," | sed 's/, "/,"/g' | sed 's/"//g'
+ 1830  Nov 12 09:44:43 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | [.children[].label, .size, .vendor, .model, .serial] | @csv' | /usr/bin/ts "%Y-%m-%d,%H:%M:%S,%s," | sed 's/, "/,"/g' | sed 's/"//g' | sed 's/ '/'/g'
+ 1831  Nov 12 09:44:57 vi ./ssd_info.sh 
+ 1832  Nov 12 09:45:44 readlink -e ./ssd_info.sh 
+ 1833  Nov 12 09:45:50 crontab -e
+ 1834  Nov 12 09:46:43 ls -lathr
+ 1835  Nov 12 09:46:44 git status
+ 1836  Nov 12 09:46:47 git add clear_ssd.sh 
+ 1837  Nov 12 09:46:48 git status
+ 1838  Nov 12 09:46:51 git add kill_old_ps 
+ 1839  Nov 12 09:46:56 git status
+ 1840  Nov 12 09:46:59 git add ssd_info.sh 
+ 1841  Nov 12 09:47:02 git ststus
+ 1842  Nov 12 09:47:05 git status
+ 1843  Nov 12 09:47:14 git commit -m "added ssd_info stuff"
+ 1844  Nov 12 09:47:17 cd ..
+ 1845  Nov 12 09:47:18 git status
+ 1846  Nov 12 09:47:24 git remote -v
+ 1847  Nov 12 09:47:27 cd ..
+ 1848  Nov 12 09:47:28 ls
+ 1849  Nov 12 09:49:48 ssds -l
+ 1850  Nov 12 09:49:51 ssds -q -l
+ 1851  Nov 12 10:08:34 cat /var/log/xocean_data_centre/scan_all.log 
+ 1852  Nov 12 10:09:05 cat /var/log/xocean_data_centre/scan_all_summary.log 
+ 1853  Nov 12 10:09:11 crontab -l
+ 1854  Nov 12 10:09:27 /opt/xo_dc/ssds/ssd_info.sh
+ 1855  Nov 12 10:09:33 cdx
+ 1856  Nov 12 10:09:34 cd ssds
+ 1857  Nov 12 10:09:41 ls
+ 1858  Nov 12 10:09:48 vi ./ssd_info.sh 
+ 1859  Nov 12 10:21:00 ./ssd_info.sh 
+ 1860  Nov 12 10:21:04 vi ./ssd_info.sh 
+ 1861  Nov 12 10:21:23 crontab -l
+ 1862  Nov 12 10:21:30 /opt/xo_dc/ssds/ssd_info.sh
+ 1863  Nov 12 10:22:38 ssds -q -l
+ 1864  Nov 12 10:23:03 ls -l /mnt/usb_drives/ssd_407
+ 1865  Nov 12 10:23:07 ls -l /mnt/usb_drives/ssd_407/
+ 1866  Nov 12 10:23:14 ssds -a
+ 1867  Nov 12 10:23:31 cdx
+ 1868  Nov 12 10:23:32 cd ssds
+ 1869  Nov 12 10:23:35 vi ssds
+ 1870  Nov 12 10:23:50 vi auto_mount.sh 
+ 1871  Nov 12 10:24:12 man tail
+ 1872  Nov 12 10:24:25 ssds -a
+ 1873  Nov 12 10:24:28 vi auto_mount.sh 
+ 1874  Nov 12 10:25:00 ssds -a
+ 1875  Nov 12 10:25:22 ls -l /var/log/xocean_data_centre/automount.log 
+ 1876  Nov 12 10:25:41 vi auto_mount.sh 
+ 1877  Nov 12 10:26:00 ssds -a
+ 1878  Nov 12 10:26:17 ls -l /var/log/xocean_data_centre/automount.log 
+ 1879  Nov 12 10:26:21 whoami
+ 1880  Nov 12 10:26:32 chmod 775 /var/log/xocean_data_centre/automount.log 
+ 1881  Nov 12 10:26:35 ssds -a
+ 1882  Nov 12 10:26:45 whoami
+ 1883  Nov 12 10:26:50 vi auto_mount.sh 
+ 1884  Nov 12 10:27:43 cp ./auto_mount.sh ./auto_mount_sc.sh
+ 1885  Nov 12 10:27:46 vi ./auto_mount_sc.sh 
+ 1886  Nov 12 10:28:21 vi auto_mount.sh 
+ 1887  Nov 12 10:28:44 vi ./auto_mount_sc.sh 
+ 1888  Nov 12 10:28:49 vi auto_mount.sh 
+ 1889  Nov 12 10:30:07 ssds -a
+ 1890  Nov 12 10:30:22 vi auto_mount.sh 
+ 1891  Nov 12 10:30:41 ./auto_mount_sc.sh 
+ 1892  Nov 12 10:30:48 vi auto_mount.sh 
+ 1893  Nov 12 10:31:14 ls -lathr /var/log/xocean_data_centre/automount.log 
+ 1894  Nov 12 10:31:30 ls -1 /var/log/xocean_data_centre/automount.log 
+ 1895  Nov 12 10:31:35 ls -1 /var/log/xocean_data_centre/automount.log >> ./auto_mount_sc.sh 
+ 1896  Nov 12 10:31:43 ls -1 /var/log/xocean_data_centre/automount.log >> ./auto_mount.sh 
+ 1897  Nov 12 10:31:50 vi ./auto_mount_sc.sh 
+ 1898  Nov 12 10:31:56 vi ./auto_mount.sh
+ 1899  Nov 12 10:32:33 ssds -a
+ 1900  Nov 12 10:32:51 sudo su - 
+ 1901  Nov 12 10:35:04 vi ./auto_mount.sh
+ 1902  Nov 12 10:35:12 ssds -a
+ 1903  Nov 12 10:35:21 vi ./auto_mount.sh
+ 1904  Nov 12 10:35:32 ssds -a
+ 1905  Nov 12 10:35:36 git status
+ 1906  Nov 12 10:35:38 git add auto_mount
+ 1907  Nov 12 10:35:41 git add *.sh
+ 1908  Nov 12 10:35:43 git status
+ 1909  Nov 12 10:35:48 git commit -m "updated"
+ 1910  Nov 12 10:35:49 cd .
+ 1911  Nov 12 10:35:50 cd ..
+ 1912  Nov 12 10:37:40 cd xodc
+ 1913  Nov 12 10:37:43 ls
+ 1914  Nov 12 10:37:45 cd xo_dc
+ 1915  Nov 12 10:38:40 git status
+ 1916  Nov 12 10:38:43 git remote add origin git@github.com:roughlyhumanoid/xo_dc.git
+ 1917  Nov 12 10:38:43 git branch -M master
+ 1918  Nov 12 10:38:43 git push -u origin master
+ 1919  Nov 12 10:38:48 git status
+ 1920  Nov 12 10:39:21 ssds -q -l
+ 1921  Nov 12 10:39:25 htop
+ 1922  Nov 12 10:39:30 ssds -s 440
+ 1923  Nov 12 10:39:38 ssds -s 438
+ 1924  Nov 12 10:39:46 ssds -s 437
+ 1925  Nov 12 10:39:56 cd ssds/
+ 1926  Nov 12 10:40:01 history | grep put
+ 1927  Nov 12 10:40:09 ./put_one.sh 437
+ 1928  Nov 12 10:40:14 #
+ 1929  Nov 12 10:40:20 ./run_put_one.sh 437
+ 1930  Nov 12 10:40:28 vi ./run_put_one.sh 
+ 1931  Nov 12 10:41:20 grep grc *.sh
+ 1932  Nov 12 10:41:25 vi ./run_put_one.sh 
+ 1933  Nov 12 10:41:38 ./run_put_one.sh 440
+ 1934  Nov 12 10:41:47 grep pid *.sh
+ 1935  Nov 12 10:41:58 vi auto_mount.sh 
+ 1936  Nov 12 10:42:06 vi ./run_put_one.sh 
+ 1937  Nov 12 10:42:23 ./run_put_one.sh 440
+ 1938  Nov 12 10:42:35 vi auto_mount.sh 
+ 1939  Nov 12 10:42:46 vi ./run_put_one.sh 
+ 1940  Nov 12 10:42:53 vi auto_mount.sh 
+ 1941  Nov 12 10:42:58 vi ./run_put_one.sh 
+ 1942  Nov 12 10:43:07 vi auto_mount.sh 
+ 1943  Nov 12 10:43:12 vi ./run_put_one.sh 
+ 1944  Nov 12 10:43:23 ./run_put_one.sh 440
+ 1945  Nov 12 10:43:34 history | grep put
+ 1946  Nov 12 10:43:40 ps -ef | grep -i put
+ 1947  Nov 12 10:43:48 kill 544612
+ 1948  Nov 12 10:43:50 ps -ef | grep -i put
+ 1949  Nov 12 10:43:55 ssds -q -l
+ 1950  Nov 12 10:44:00 ssds -s 407
+ 1951  Nov 12 10:44:03 ssds -s 435
+ 1952  Nov 12 10:44:40 clear_ssd.sh 435
+ 1953  Nov 12 10:45:01 vi clear_ssd.sh
+ 1954  Nov 12 10:46:47 man rm
+ 1955  Nov 12 10:47:03 vi clear_ssd.sh
+ 1956  Nov 12 10:47:11 clear_ssd.sh 435
+ 1957  Nov 12 10:47:20 clear_ssd.sh 435 force
+ 1958  Nov 12 10:47:35 y
+ 1959  Nov 12 10:47:45 vi clear_ssd.sh
+ 1960  Nov 12 10:47:59 clear_ssd.sh 435 force
+ 1961  Nov 12 10:48:16 ls -l /mnt/usb_drives/ssd_435/
+ 1962  Nov 12 10:48:21 ssds -q -l
+ 1963  Nov 12 10:48:28 clear_ssd.sh 440
+ 1964  Nov 12 10:48:40 ssds -s 440
+ 1965  Nov 12 10:48:47 clear_ssd.sh 440 force
+ 1966  Nov 12 10:48:56 ssds -q -l
+ 1967  Nov 12 11:00:24 ssds -s 438
+ 1968  Nov 12 11:00:56 ls -l /opt/duc/dbs/
+ 1969  Nov 12 11:01:25 mv /opt/duc/dbs/ssd*.db /tmp/
+ 1970  Nov 12 11:02:56 cdx
+ 1971  Nov 12 11:02:58 cd ssds
+ 1972  Nov 12 11:03:02 grep duc *.sh
+ 1973  Nov 12 11:03:44 mkdir /backup
+ 1974  Nov 12 11:03:49 sudo mkdir /backup
+ 1975  Nov 12 11:03:58 sudo chown xo-mark:xo-mark /backup
+ 1976  Nov 12 11:04:02 ls -l
+ 1977  Nov 12 11:04:12 vi ./backup_dbs.sh
+ 1978  Nov 12 11:04:27 chmod 755 ./backup_dbs.sh 
+ 1979  Nov 12 11:04:37 readlink -e /opt/duc/dbs/
+ 1980  Nov 12 11:04:58 find /opt/duc/dbs -type f -name "*.db"
+ 1981  Nov 12 11:05:02 find /opt/duc/dbs -type f
+ 1982  Nov 12 11:05:08 ls -l /opt/duc/dbs
+ 1983  Nov 12 11:05:13 ls -l /opt/duc/dbs/
+ 1984  Nov 12 11:05:18 ls -l /var/dbs
+ 1985  Nov 12 11:05:38 cp /tmp/*.db /opt/duc/dbs/
+ 1986  Nov 12 11:05:43 ls -l /opt/duc/dbs
+ 1987  Nov 12 11:05:45 ls -l /opt/duc/dbs/
+ 1988  Nov 12 11:05:50 find /opt/duc/dbs -type f
+ 1989  Nov 12 11:05:53 find /opt/duc/dbs/ -type f
+ 1990  Nov 12 11:06:24 cdx
+ 1991  Nov 12 11:06:26 cd ssds
+ 1992  Nov 12 11:06:27 cd mdsl
+ 1993  Nov 12 11:06:31 vi ./cc_disk_stats.sh 
+ 1994  Nov 12 11:06:42 vi ./gen_runduc.sh 
+ 1995  Nov 12 11:08:37 vi ./cc_disk_stats.sh 
+ 1996  Nov 12 11:09:57 cd ..
+ 1997  Nov 12 11:10:02 grep cc_disk_stats *.sh
+ 1998  Nov 12 11:10:07 vi ssds.sh 
+ 1999  Nov 12 11:10:25 ssds -q -l
+ 2000  Nov 12 11:10:32 ssds -s 435
+ 2001  Nov 12 11:11:12 ssds -q -l
+ 2002  Nov 12 11:28:11 cdx
+ 2003  Nov 12 11:28:12 cd ssds
+ 2004  Nov 12 11:28:14 ls -lathr
+ 2005  Nov 12 11:28:20 readlink -e ./index_all.sh 
+ 2006  Nov 12 11:28:33 crontab -e
+ 2007  Nov 12 11:29:46 crontab -l
+ 2008  Nov 12 11:30:06 /opt/xo_dc/ssds/index_all.sh >> /var/log/xocean_data_centre/inventories/index_all.log 2>&1 &
+ 2009  Nov 12 11:30:14 tail -f /var/log/xocean_data_centre/inventories/index_all.log 
+ 2010  Nov 12 11:38:11 htop
+ 2011  Nov 12 11:38:47 ssds -q -l
+ 2012  Nov 12 11:38:50 ssds -s 440
+ 2013  Nov 12 11:38:56 ssds -s 438
+ 2014  Nov 12 11:39:05 ssds -s 407
+ 2015  Nov 12 11:39:09 ssds -s 435
+ 2016  Nov 12 11:39:13 ssds -s 440
+ 2017  Nov 12 11:41:25 ssds -q -l
+ 2018  Nov 12 11:41:32 ssds -s 438
+ 2019  Nov 12 11:42:00 ssds -s 427
+ 2020  Nov 12 11:42:03 ssds -s 437
+ 2021  Nov 12 11:42:27 ssds -q -l
+ 2022  Nov 12 11:42:43 df -Th
+ 2023  Nov 12 11:42:49 ssds -a
+ 2024  Nov 12 11:45:00 ls -l /mnt/usb_drives/ssd_407/
+ 2025  Nov 12 11:45:18 ssds -a
+ 2026  Nov 12 11:46:16 clear_ssd.sh 438
+ 2027  Nov 12 11:46:29 ssds -s 437
+ 2028  Nov 12 11:47:51 ps -ef | grep -i ssd_437
+ 2029  Nov 12 11:47:56 ps -ef | grep -i ssd_438
+ 2030  Nov 12 11:48:05 ssds -s 438
+ 2031  Nov 12 11:48:17 ./clear_ssd.sh 438
+ 2032  Nov 12 11:48:25 ./clear_ssd.sh 438 force
+ 2033  Nov 12 11:48:43 ls -l /mnt/usb_drives/ssd_438
+ 2034  Nov 12 11:49:26 git status
+ 2035  Nov 12 11:49:29 git add *.sh
+ 2036  Nov 12 11:49:30 git status
+ 2037  Nov 12 11:49:41 git commit -m "added inentory tools"
+ 2038  Nov 12 11:49:42 git push
+ 2039  Nov 12 11:49:53 cd
+ 2040  Nov 12 11:49:54 cd .aws
+ 2041  Nov 12 11:49:56 cat config
+ 2042  Nov 12 11:50:00 aws --profile s3 ls
+ 2043  Nov 12 11:50:07 aws --profile dc_auto_camera
+ 2044  Nov 12 11:50:10 aws --profile dc_auto_camera s3 ls
+ 2045  Nov 12 11:50:23 aws --profile dc_auto_camera s3 ls s3://xocean-production-transition/
+ 2046  Nov 12 11:51:01 cd ..
+ 2047  Nov 12 11:51:04 cdx
+ 2048  Nov 12 11:51:05 cd ssds
+ 2049  Nov 12 11:51:11 crontab -l
+ 2050  Nov 12 11:51:30 grep 'ssds -j' *.sh
+ 2051  Nov 12 11:51:38 ssdjq.sh 
+ 2052  Nov 12 11:51:44 vi ./ssdjq.sh 
+ 2053  Nov 12 11:52:13 history | grep jq
+ 2054  Nov 12 11:52:35 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")'
+ 2055  Nov 12 11:53:28 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | select (.children[0].lebel=="SSD 440")'
+ 2056  Nov 12 11:54:12 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | select (.children[0].label=="SSD 440")'
+ 2057  Nov 12 11:55:00 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | select (.children[0].label | contains("SSD 440"))'
+ 2058  Nov 12 11:55:04 ssds -j | jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci") | select (.children[0].label | contains("440"))'
+ 2059  Nov 12 11:55:17 ls -al
+ 2060  Nov 12 11:55:32 vi ./ssd_info.sh 
+ 2061  Nov 12 11:55:58 ls -althr
+ 2062  Nov 12 11:56:04 vi ./index_all.sh 
+ 2063  Nov 12 11:58:34 ./index_all.sh 
+ 2064  Nov 12 11:58:45 vi ./index_all.sh 
+ 2065  Nov 12 11:59:00 ./index_all.sh 
+ 2066  Nov 12 11:59:03 vi ./index_all.sh 
+ 2067  Nov 12 11:59:17 ./index_all.sh 
+ 2068  Nov 12 11:59:19 vi ./index_all.sh 
+ 2069  Nov 12 12:00:29 ./index_all.sh 
+ 2070  Nov 12 12:00:38 ls -al /var/log/xocean_data_centre/inventories/*.json
+ 2071  Nov 12 12:00:50 vi ./index_all.sh 
+ 2072  Nov 12 12:01:19 cat /home/xo-mark/.aws/config 
+ 2073  Nov 12 12:01:26 vi ./index_all.sh 
+ 2074  Nov 12 12:01:53 aws s3 help
+ 2075  Nov 12 12:01:58 vi ./index_all.sh 
+ 2076  Nov 12 12:04:56 ./index_all.sh 
+ 2077  Nov 12 12:05:09 vi ./index_all.sh 
+ 2078  Nov 12 12:06:00 ./index_all.sh 
+ 2079  Nov 12 12:06:06 vi ./index_all.sh 
+ 2080  Nov 12 12:06:10 ./index_all.sh 
+ 2081  Nov 12 12:06:40 vi ./index_all.sh 
+ 2082  Nov 12 12:06:58 ./index_all.sh 
+ 2083  Nov 12 12:07:38 vi ./index_all.sh 
+ 2084  Nov 12 12:09:04 aws --profile dc_auto_camera s3 ls  S3://xocean-production-raw-dc-eu-west-2/DC1/
+ 2085  Nov 12 12:09:17 aws --profile dc_auto_camera s3 ls xocean-production-raw-dc-eu-west-2/DC1/
+ 2086  Nov 12 12:09:26 vi ./index_all.sh 
+ 2087  Nov 12 12:09:40 ./index_all.sh 
+ 2088  Nov 12 12:10:38 aws --profile dc_auto_camera s3 cp /var/log/xocean_data_centre/inventories/ssd_440.2024-11-12.json  xocean-production-raw-dc-eu-west-2/DC1/ssd_440/device_info/ssd_440.2024-11-12.json
+ 2089  Nov 12 12:10:50 aws --profile dc_auto_camera s3 cp '/var/log/xocean_data_centre/inventories/ssd_440.2024-11-12.json'  xocean-production-raw-dc-eu-west-2/DC1/ssd_440/device_info/ssd_440.2024-11-12.json
+ 2090  Nov 12 12:11:01 aws --profile dc_auto_camera s3 cp '/var/log/xocean_data_centre/inventories/ssd_440.2024-11-12.json'  's3://xocean-production-raw-dc-eu-west-2/DC1/ssd_440/device_info/ssd_440.2024-11-12.json'
+ 2091  Nov 12 12:11:07 vi ./index_all.sh 
+ 2092  Nov 12 12:11:52 ./index_all.sh 
+ 2093  Nov 12 12:12:01 bash -x ./index_all.sh 
+ 2094  Nov 12 12:12:14 vi ./index_all.sh 
+ 2095  Nov 12 12:12:29 bash -x ./index_all.sh 
+ 2096  Nov 12 12:13:01 ssds -q -l
+ 2097  Nov 12 12:13:32 ps -ef | grep -i aws
+ 2098  Nov 12 12:13:46 ./run_put_one.sh 405
+ 2099  Nov 12 12:14:08 ps -ef | grep -i run_put
+ 2100  Nov 12 12:14:22 ./put_one.sh 
+ 2101  Nov 12 12:14:28 ps -ef | grep -i ./put_one.sh 
+ 2102  Nov 12 12:14:35 ps -ef | grep -i ./put_one.sh | grep -v grep
+ 2103  Nov 12 12:14:55 vi ./run_put_one.sh 
+ 2104  Nov 12 12:15:52 ./run_put_one.sh 
+ 2105  Nov 12 12:15:53 vi ./run_put_one.sh 
+ 2106  Nov 12 12:16:02 ./run_put_one.sh 
+ 2107  Nov 12 12:16:03 vi ./run_put_one.sh 
+ 2108  Nov 12 12:16:36 ./run_put_one.sh 
+ 2109  Nov 12 12:16:40 vi ./run_put_one.sh 
+ 2110  Nov 12 12:17:24 ./run_put_one.sh 
+ 2111  Nov 12 12:17:26 ./run_put_one.sh go
+ 2112  Nov 12 12:17:29 vi ./run_put_one.sh 
+ 2113  Nov 12 12:17:36 grep readarray *.sh
+ 2114  Nov 12 12:17:45 vi ./index_all.sh 
+ 2115  Nov 12 12:17:55 vi ./run_put_one.sh 
+ 2116  Nov 12 12:18:49 vi ./index_all.sh 
+ 2117  Nov 12 12:19:06 vi ./run_put_one.sh 
+ 2118  Nov 12 12:20:08 vi ./index_all.sh 
+ 2119  Nov 12 12:20:18 ./run_put_one.sh go
+ 2120  Nov 12 12:20:21 vi ./index_all.sh 
+ 2121  Nov 12 12:20:29 vi ./run_put_one.sh 
+ 2122  Nov 12 12:20:43 ./run_put_one.sh go
+ 2123  Nov 12 12:20:45 vi ./run_put_one.sh 
+ 2124  Nov 12 12:21:04 vi ./index_all.sh 
+ 2125  Nov 12 12:21:16 vi ./run_put_one.sh 
+ 2126  Nov 12 12:21:45 ./run_put_one.sh go
+ 2127  Nov 12 12:21:55 vi ./run_put_one.sh 
+ 2128  Nov 12 12:27:09 ./run_put_one.sh go
+ 2129  Nov 12 12:27:12 vi ./run_put_one.sh 
+ 2130  Nov 12 12:27:20 ./run_put_one.sh go
+ 2131  Nov 12 12:27:23 vi ./run_put_one.sh 
+ 2132  Nov 12 12:28:19 ./run_put_one.sh go
+ 2133  Nov 12 12:28:30 vi ./run_put_one.sh 
+ 2134  Nov 12 12:28:56 ./run_put_one.sh go
+ 2135  Nov 12 12:29:01 vi ./run_put_one.sh 
+ 2136  Nov 12 12:30:47 ./run_put_one.sh go
+ 2137  Nov 12 12:31:11 vi ./run_put_one.sh 
+ 2138  Nov 12 12:31:25 ./run_put_one.sh go
+ 2139  Nov 12 12:31:38 vi ./run_put_one.sh 
+ 2140  Nov 12 12:32:27 ./run_put_one.sh go
+ 2141  Nov 12 12:32:36 vi ./run_put_one.sh 
+ 2142  Nov 12 12:32:45 ./run_put_one.sh go
+ 2143  Nov 12 12:32:50 vi ./run_put_one.sh 
+ 2144  Nov 12 12:33:21 ./run_put_one.sh go
+ 2145  Nov 12 12:33:28 vi ./run_put_one.sh 
+ 2146  Nov 12 12:34:05 ./run_put_one.sh go
+ 2147  Nov 12 12:34:12 vi ./run_put_one.sh 
+ 2148  Nov 12 12:34:37 ./run_put_one.sh go
+ 2149  Nov 12 12:35:01 ps -ef | grep -i put_one
+ 2150  Nov 12 12:35:07 vi ./run_put_one.sh 
+ 2151  Nov 12 12:37:46 kill 1223631
+ 2152  Nov 12 12:37:50 kill 1394825
+ 2153  Nov 12 12:37:55 ps -ef | grep -i put_one
+ 2154  Nov 12 12:37:59 kill 1411623
+ 2155  Nov 12 12:38:03 kill 1411806
+ 2156  Nov 12 12:38:06 ps -ef | grep -i put_one
+ 2157  Nov 12 12:38:13 ./run_put_one.sh go
+ 2158  Nov 12 12:38:33 vi ./run_put_one.sh 
+ 2159  Nov 12 12:38:56 kill 1414384
+ 2160  Nov 12 12:39:00 kill 1414332
+ 2161  Nov 12 12:39:03 kill 1414284
+ 2162  Nov 12 12:39:08 ps -ef | grep -i put_one
+ 2163  Nov 12 12:39:13 ./run_put_one.sh go
+ 2164  Nov 12 12:39:26 vi ./run_put_one.sh 
+ 2165  Nov 12 12:40:25 git add ./run_put_one.sh 
+ 2166  Nov 12 12:40:27 git status
+ 2167  Nov 12 12:40:29 git add index_all.sh 
+ 2168  Nov 12 12:40:34 git commit -m "run put one"
+ 2169  Nov 12 12:40:37 git push
+ 2170  Nov 12 12:40:46 history 10
+ 2171  Nov 12 12:40:57 crontab -e
+ 2172  Nov 12 12:41:57 clear
+ 2173  Nov 12 12:42:00 htop
+ 2174  Nov 12 12:42:05 ssds -e
+ 2175  Nov 12 12:42:14 ssds
+ 2176  Nov 12 12:42:29 vi ssds.sh 
+ 2177  Nov 12 12:44:31 ssds -C
+ 2178  Nov 12 12:44:36 vi ssds.sh 
+ 2179  Nov 12 12:45:38 ssds
+ 2180  Nov 12 12:45:39 ssds -C
+ 2181  Nov 12 12:45:49 ps -ef | grep -i aws 
+ 2182  Nov 12 12:45:53 htop
+ 2183  Nov 12 12:45:57 man htop
+ 2184  Nov 12 12:46:07 htop -F 'aws s3'
+ 2185  Nov 12 12:46:49 which htop
+ 2186  Nov 12 12:46:54 vi htop_sync.sh
+ 2187  Nov 12 12:47:34 chmod 755 ./htop_sync.sh 
+ 2188  Nov 12 12:47:36 ./htop_sync.sh 
+ 2189  Nov 12 12:47:47 vi htop_sync.sh
+ 2190  Nov 12 12:48:31 ./htop_sync.sh 
+ 2191  Nov 12 12:48:35 vi htop_sync.sh
+ 2192  Nov 12 12:48:47 ./htop_sync.sh 
+ 2193  Nov 12 12:48:52 vi htop_sync.sh
+ 2194  Nov 12 12:50:16 ./htop_sync.sh 
+ 2195  Nov 12 12:50:31 git status
+ 2196  Nov 12 12:50:34 git add ssds.sh 
+ 2197  Nov 12 12:50:36 git add htop_sync.sh 
+ 2198  Nov 12 12:50:37 git status
+ 2199  Nov 12 12:50:44 git commit -m "Added handlers"
+ 2200  Nov 12 12:50:45 git push
+ 2201  Nov 12 12:50:52 cd ..
+ 2202  Nov 12 12:50:55 mkdir doc
+ 2203  Nov 12 12:50:56 cd doc
+ 2204  Nov 12 12:51:28 history > ./xodc.2024-11-12.hist

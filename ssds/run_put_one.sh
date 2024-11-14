@@ -65,3 +65,9 @@ run_pid=$!
 if [[ "$tail_this" == "tail" ]] || [[ "$tail_this" == 't' ]]; then
 	/usr/bin/grc /usr/bin/tail -f "$log_fn" --pid="$run_pid"
 fi
+
+
+printf "Finished this run: %s %s\n" "$0" "$*"
+
+
+

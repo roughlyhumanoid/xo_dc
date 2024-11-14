@@ -12,6 +12,7 @@ trap print_error ERR
 # --- Load libs --- #
 script_dir=/opt/xo_usv/bash
 ssd_dir=/opt/xo_dc/ssds
+sd="${ssd_dir}"
 source "${script_dir}/gen_utils.sh"
 source "${script_dir}/inv_utils.sh"
 
@@ -35,11 +36,13 @@ query_ssd=1
 check_sync=1
 just_local=0
 one_line=1
+force=1
+verbose=1
 
 # print help
 function print_help()
 {
-	clear
+	# clear
         printf "\n### Usage for: %s ###\n" "$0"
         printf "### This is not the help file you are looking for.\tBut it will have to do.\nUsage for: %s ###\n" "$0"
 
@@ -60,16 +63,26 @@ function print_help()
 	printf "\n"
         help_line '-L' 'log level' 'Set log level to one of the standarsd levels:  DEBUG | INFO | WARNING | ERROR | CRTICALL' 'Example usage:  ssds -l -L INFO'
 	printf "\n"
-        help_line '-q' 'quiet' 'Just print basic info.  Use with -l.' 'Example usage:  ssds -q -l'
+        help_line '-q' 'quiet' 'Just print basic info.' 'Example usage:  ssds -l -q'
 	printf "\n"
         help_line '-Q' 'query device' 'Querys device by id or device path.  Get ID or path by running ssds -l' 'Example usage:  ssds -Q -d /dev/sdp1'
 	printf "\n"
         help_line '-s' 'Scan and check syncs' 'Scan and check ssd syncs' 'Example usage:  ssds -s 444'
 	printf "\n"
+        help_line '-v' 'verbose' 'Print more verbose info for a command.' 'Example usage:  ssds -l -v'
+	printf "\n"
         help_line '-h' 'help' 'Print this page' 'Example usage:  ssds -h'
 	printf "\n"
 
-	printf "\n"
+	span=50
+	s2=20
+	printf "\n### Examples ### -----------------------------\n\n"
+	printf "%-${span}s%-${s2}s\n" "Check what ssds are attached:" "ssds -l"
+	printf "%-${span}s%-${s2}s\n" "Check running sync processes:" "ssds -C"
+	printf "%-${span}s%-${s2}s\n" "Check sync status of an ssd:" "ssds -s 499"
+	printf "%-${span}s%-${s2}s\n" "Check if an ssd is ready to be cleared:" "ssds -X 499"
+
+	printf "\n### End of Examples ### ----------------------\n\n"
 }
 
 
@@ -85,7 +98,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aACd:efi:jloqQs:uh" opt; do
+while getopts "aACd:efFi:jloqQs:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
@@ -101,6 +114,9 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
     C)
 	check_process=0
 	/opt/xo_dc/ssds/run_put_one.sh
+	printf "\n\n"
+	sleep 1
+	ps -eo user,pid,ppid,stime,etime,command | grep -v ^root | grep 'ssd_' | grep -v grep | sort -k11 | awk -F '/' '{printf "%s %s\n",$4,$0}'
 	exit 0
       ;;
     d)
@@ -128,6 +144,9 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
 	ssd_all
 	exit 0
       ;;
+    F)
+        force=0
+      ;;
     g)
         print_header_only=0
       ;;
@@ -135,22 +154,15 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
         device_id=$OPTARG
       ;;
     j)
-        lsblk -aOJ
-	exit 0
+	ssd_command='lsblk'
+        # lsblk -aOJ
+	# exit 0
       ;;
     k)
         echo "little k"; exit 0
       ;;
     l)
-        # log_level=$OPTARG
-	if [[ "${quiet}" -eq 0 ]]; then 
-		tf=$(mktemp)
-		get_ssd_mounts > $tf
-		cat $tf | awk '{print $2}'
-	else
-		get_ssd_mounts
-	fi
-	exit 0
+        ssd_command='list'
       ;;
     L)
         log_level=$OPTARG
@@ -162,13 +174,13 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
 	one_line=0
       ;;
     p)
-	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
-	printf "Running run_put_one.sh go\n"
-	/opt/xo_dc/ssds/run_put_one.sh go
-	exit 0
+        ssd_command='put_all'
       ;;
     q)
         quiet=0
+      ;;
+    Q)
+        query_device=0
       ;;
     s)
 	query_ssd=0
@@ -179,11 +191,15 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
     u)
         just_local=0
       ;;
-    Q)
-        query_device=0
+    v)
+        verbose=0
       ;;
     x)
         usv=$OPTARG
+      ;;
+    X)
+        ssd_command='clear_ssd'
+	ssd=$OPTARG
       ;;
     h)
 	print_help
@@ -191,11 +207,60 @@ while getopts "aACd:efi:jloqQs:uh" opt; do
       ;;
     \?)
       echo "Invalid option: -$OPTARG"
+      print_help
+      echo "Invalid option: -$OPTARG"
+      printf "You entered %s %s\n" "$0" "$*"
       exit
       ;;
   esac
 done
 
+case "$ssd_command" in
+
+  clear_ssd)
+	if [[ "$force" -eq 0 ]]; then
+		# printf "Not force deleting despite the fact you want me to.\n"
+    		# "${sd}/clear_ssd" "$ssd"
+    		"${sd}/clear_ssd" "$ssd" force
+	else
+    		"${sd}/clear_ssd" "$ssd"
+	fi
+    	exit $?
+    ;;
+
+  scan_all)
+	"${sd}/scan_all" 
+	exit 0
+    ;;
+
+  lsblk)
+	lsblk -aOJ
+	exit 0
+    ;;
+  put_all)
+	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
+	printf "Running run_put_one.sh go\n"
+	/opt/xo_dc/ssds/run_put_one.sh go
+	exit 0
+    ;;
+  list)
+	if [[ "${quiet}" -eq 0 ]]; then 
+		tf=$(mktemp)
+		get_ssd_mounts > $tf
+		cat $tf | awk '{print $2}'
+	elif [[ "${verbose}" -eq 0 ]]; then
+		get_ssd_mounts
+	else
+		tf=$(mktemp)
+		get_ssd_mounts > $tf
+		cat $tf | awk '{print $2}'
+	fi
+	exit 0
+    ;;
+  *)
+    # echo "no command"
+    ;;
+esac
 
 if [[ "$query_device" -eq 0 ]]; then
 	printf "Querying device.\n"

@@ -59,11 +59,11 @@ function get_ssd_mounts_2()
 	s0=5
 	s1=12
 	s2=15
-	s3=15
-	s4=10
+	s3=20
+	s4=20
 	s5=15
-	printf "\n%-${s0}s%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "ID" "SSD"     "DEVICE" "PATH" "SIZE" "MOUNT PATH"
-	printf "\n%-${s0}s%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "--" "-------" "------" "----" "----" "----------"
+	printf "\n%-${s0}s%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "ID" "SSD"     "DEVICE" " PATH" "SIZE" "MOUNT PATH"
+	printf "\n%-${s0}s%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "--" "-------" "------" " ----" "----" "----------"
 	# printf "\n%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "-----------" "--------------" "--------------" "---------" "----------"
 	# printf "\n%-${s1}s%-${s2}s%-${s3}s%-${s4}s%-${s5}s\n" "$s1" "$s2" "$s3" "$s4" "$s5"
 
@@ -79,7 +79,7 @@ function get_ssd_mounts_2()
 			printf "%-${s4}s%-${s5}s\t" "NAN" "DIR does not exist! $mnt_dir"
 		else	
 			# du -sh /mnt/usb_drives/ssd_208 | awk '{printf "%-10s%-15s\t",$1,$2}'
-			/usr/bin/timeout 10 du -sh $mnt_dir | awk '{printf "%-10s%-15s\t",$1,$2}'
+			/usr/bin/timeout 10 du -sh $mnt_dir | awk '{printf "%-20s%-15s\t",$1,$2}'
 		fi
 
 		printf "\n"

@@ -1,13 +1,13 @@
 #!/bin/bash
+source /etc/xocean/dc.env
+source /opt/xo_usv/bash/gen_utils.sh
+user_delay=5
+ssd_base="$ssd_root"
+
 ssd=$1
 force=$2
-tmpfil=$(mktemp)
-tmpfil="/tmp/ssd_${ssd}.tmpfil"
-sdir=/opt/xo_dc/ssds
-rm $tmpfil
-"${sdir}/ssds" -s "$ssd" -o  | /usr/bin/tee "${tmpfil}"
+# sdir=/opt/xo_dc/ssds
 
-# for line in ("${tmpfil}"); do
 function ssd_sum()
 {
 	while read line; do 
@@ -32,6 +32,10 @@ function ssd_sum()
 
 			if [[ "$force" == "force" ]]; then
 				# sudo rm -rfI "$del_dir" 
+
+				printf "About to permanently remove the following dir: %s\n" "$del_dir"
+				printf "You have %d seconds to abort with CTRL-C\n" "$user_delay"
+				dots "$user_delay"
 				sudo rm -rf "$del_dir" 
 			fi
 		fi
@@ -39,7 +43,25 @@ function ssd_sum()
 }
 
 
-ssd_sum
+# tmpfil=$(mktemp)
+tmpfil="/tmp/ssd_${ssd}.tmpfil"
+if [[ ! -f "$tmpfil" ]]; then rm "$tmpfil"; fi
+
+"${sdir}/ssds" -s "$ssd" -o  | /usr/bin/tee "${tmpfil}"
+
+ssd_label="ssd_${ssd}"
+num_entries=$(cat "${tmpfil}" | grep -v '###' | wc -l)
+printf "\t%s,\tFound %d matching directories.\n" "$ssd_label" "$num_entries"
+# for line in ("${tmpfil}"); do
+
+if [[ "${num_entries}" -gt 0 ]]; then
+	ssd_sum
+else
+	printf "\t%s, No mission folders to upload.\n" "$ssd_label"
+	this_ssd_dir="${ssd_base}/ssd_${ssd}"
+	printf "\t%s, Contents of this ssd dir: %s\n" "$ssd_label" "$this_ssd_dir"
+	ls -l "$this_ssd_dir" | awk -v "ssd_label=$ssd_label"  '{printf "\t\t%s, %s\n",ssd_label,$0}'
+fi
 exit 0
 
 local_count=$(cat "${tmpfil}" | awk '{print $7}')

@@ -63,6 +63,8 @@ function print_help()
 	printf "\n"
         help_line '-L' 'log level' 'Set log level to one of the standarsd levels:  DEBUG | INFO | WARNING | ERROR | CRTICALL' 'Example usage:  ssds -l -L INFO'
 	printf "\n"
+	help_line '-M' 'manage' '{TESTING ONLY.  NOT OPERATIONAL). SSD queue management.' 'Example usage:  ssds -m'
+	printf "\n"
         help_line '-q' 'quiet' 'Just print basic info.' 'Example usage:  ssds -l -q'
 	printf "\n"
         help_line '-Q' 'query device' 'Querys device by id or device path.  Get ID or path by running ssds -l' 'Example usage:  ssds -Q -d /dev/sdp1'
@@ -98,7 +100,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aACd:efFi:jloqQs:uvX:h" opt; do
+while getopts "aACd:efFi:jlLMoqQs:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
@@ -170,6 +172,9 @@ while getopts "aACd:efFi:jloqQs:uvX:h" opt; do
     m)
 	query_ssd=0
       ;;
+    M)
+        ssd_command='manage_ssds'
+      ;;
     o)
 	one_line=0
       ;;
@@ -237,12 +242,6 @@ case "$ssd_command" in
 	lsblk -aOJ
 	exit 0
     ;;
-  put_all)
-	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
-	printf "Running run_put_one.sh go\n"
-	/opt/xo_dc/ssds/run_put_one.sh go
-	exit 0
-    ;;
   list)
 	if [[ "${quiet}" -eq 0 ]]; then 
 		tf=$(mktemp)
@@ -255,6 +254,17 @@ case "$ssd_command" in
 		get_ssd_mounts > $tf
 		cat $tf | awk '{print $2}'
 	fi
+	exit 0
+    ;;
+  put_all)
+	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
+	printf "Running run_put_one.sh go\n"
+	/opt/xo_dc/ssds/run_put_one.sh go
+	exit 0
+    ;;
+  manage_ssds)
+	source "${sd}/ssds_queue.sh"
+	q_help
 	exit 0
     ;;
   *)

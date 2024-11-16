@@ -1,4 +1,8 @@
 #!/bin/bash
+
+which python | grep '/home/xo-mark' >/dev/null 2>&1; result=$?
+if [[ "${result}" -ne 0 ]]; then printf "Loading python environment.\n"; source /home/xo-mark/venv/bin/activate > /dev/null 2>&1; fi
+
 # --- Error stuff --- #
 function print_error {
     read line file <<<$(caller)
@@ -7,7 +11,6 @@ function print_error {
 }
 
 trap print_error ERR
-
 
 # --- Load libs --- #
 script_dir=/opt/xo_usv/bash
@@ -55,6 +58,8 @@ function print_help()
         printf "\n"
         help_line '-f' 'Diagnostics only: full ssd details list' '' 'Example usage:  ssds -f'
         printf "\n"
+        help_line '-H' 'Show SSD connection history' '' 'Example usage:  ssds -H'
+	printf "\n"
         # help_line '-g' 'Print header only' '' 'Example usage:  ssds -g'
         # printf "\n"
         help_line '-j' 'Diagnostics only: full ssd details list in json format' '' 'Example usage:  ssds -j'
@@ -100,7 +105,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aACd:efFi:jlLMoqQs:uvX:h" opt; do
+while getopts "aACd:efFHi:jlLMoqQs:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
@@ -155,10 +160,11 @@ while getopts "aACd:efFi:jlLMoqQs:uvX:h" opt; do
     i)
         device_id=$OPTARG
       ;;
+    H)
+	ssd_command='ssd_hist'
+      ;;
     j)
 	ssd_command='lsblk'
-        # lsblk -aOJ
-	# exit 0
       ;;
     k)
         echo "little k"; exit 0
@@ -265,6 +271,10 @@ case "$ssd_command" in
   manage_ssds)
 	source "${sd}/ssds_queue.sh"
 	q_help
+	exit 0
+    ;;
+  ssd_hist)
+	"${sd}/ssd_history.sh"
 	exit 0
     ;;
   *)

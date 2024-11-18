@@ -22,7 +22,7 @@ function just_header()
 		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent complete\n" \
 			"SSD     " "USV_MISSION DIR    " "DC Server" \
 			"Size-check" \
-			"SSD bytes" "S3 bytes" "Size ( SSD - S3 )  " "Uploadi status" \
+			"SSD bytes" "S3 bytes" "Size ( SSD - S3 )  " "Upload status" \
 			| sed 's/percent/%/g'
 	else
 		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent complete\n" \
@@ -50,7 +50,9 @@ function ssd_sum()
 		if [[ "$quiet" -ne 0 ]]; then echo $line; fi
 		ssd_label="ssd_${this_ssd}"
 		is_syncing "$this_ssd"
-		if [[ "$is_syncing" -eq 0 ]]; then 
+		is_syncing_result=$?
+
+		if [[ "$is_syncing_result" -eq 0 ]]; then 
 			sync_string='Syncing'
 		else
 			sync_string='...'

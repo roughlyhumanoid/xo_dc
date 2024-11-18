@@ -26,6 +26,8 @@ printf "Writing output to: %s\n" "$stat1_file"
 # Write report
 printf "### SSD summary - DC1 xodc ( ServerChoice Stevanage, transfer node server ) ###\n" > "$stat1_file"
 /opt/xo_dc/ssds/clear_ssd.sh -H | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+/opt/xo_dc/ssds/clear_ssd.sh -H | sed -e 's/[a-zA-Z0-9:%()]/-/g' | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+
 
 for (( i=o; i<$ns; i++ )); do
 	this_ssd="${ssds[$i]}"

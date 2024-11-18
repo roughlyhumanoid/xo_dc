@@ -5,6 +5,7 @@ pid_file="/usr/var/run/ssd_upload.pid"
 # ssd=$1
 # ssd='428'
 delete_s3=1
+mission=''
 
 set -Eeuo pipefail
 
@@ -22,7 +23,17 @@ function upload_ssd()
 {
 	# ssd=$1
 	this_ssd="ssd_${1}"
+	this_mission=$2
+
 	this_source="${base_dir}/${this_ssd}"
+	this_dest="${s3dc}/DC1/${this_ssd}"
+	# if [[ "${#this_mission}" -gt 5 ]]; then
+	#	this_source="${base_dir}/${this_ssd}/${this_mission}"
+	#	this_dest="${s3dc}/DC1/${this_ssd}/${this_mission}"
+	# else	
+	#	this_source="${base_dir}/${this_ssd}"
+	#	this_dest="${s3dc}/DC1/${this_ssd}"
+	# fi
 
 	if [[ ! -d "$this_source" ]]; then
 		printf "Error.  Directory doesn\'t exist\n\t%s\n" "$this_source"
@@ -30,13 +41,24 @@ function upload_ssd()
 		exit 1
 	fi
 
-	this_dest="${s3dc}/DC1/${this_ssd}"
 	readarray -t source_dirs <<< $(find "${this_source}/" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | grep -Ev 'RECYCLE' | grep -iv 'System Volume')
 	ndirs="${#source_dirs[@]}"
 	printf "%s: Found %d subdirs suitable for uploading\n" "$this_ssd" "$ndirs"
 
 	for (( m_i=0; m_i<$ndirs; m_i++ )); do 
 		local this_dir="${source_dirs[$m_i]}"
+
+		if [[ "${this_mission}" == "list" ]]; then
+  				printf "Mission: %s\n" "$this_dir" 
+				continue
+		elif [[ "${#this_mission}" -gt 5 ]]; then
+			if [[ $this_dir == *"${this_mission}"* ]]; then
+  				printf "Found matching mission! Mission %s contains %s\n" "$this_dir" "$this_mission"
+			else	
+  				printf "Skipping this mission: %s\n" "$this_dir" 
+				continue
+			fi
+		fi
 
 		local this_dest_subdir="${this_dest}/${this_dir}"
 		printf "%s: Syncing ssd_%s root dir: %s to %s\n" "$this_ssd" "$this_ssd" "$this_dir" "$this_dest_subdir"
@@ -75,13 +97,16 @@ if [[ "${#arg}" -eq 3 ]]; then
 fi
 
 # while getopts "ade:gikKlqrs:St:vx:h" opt; do
-while getopts "ds:h" opt; do
+while getopts "dm:s:h" opt; do
   case $opt in
     d)
         delete_s3=0
       ;;
     s)
         ssd=$OPTARG
+      ;;
+    m)
+        mission=$OPTARG
       ;;
     h)
         print_help
@@ -98,7 +123,7 @@ done
 
 printf "Running for ssd: %s\n" "$ssd"
 # one_ssd=$1
-upload_ssd "$ssd"
+upload_ssd "$ssd" "$mission"
 
 
 

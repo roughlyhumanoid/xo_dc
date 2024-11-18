@@ -41,10 +41,42 @@ function regex_check()
 	fi
 }
 
+function check_ssd_num {
+	local this_ssd=$1
+
+	# if [[ "${#this_ssd}" -eq 3 ]] && [[ "$(is_a_number ${this_ssd})" -eq 0 ]]; then
+	if [[ "${#this_ssd}" -eq 3 ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
 
 function get_ssd_mounts()
 {
-	/usr/bin/lsblk -o SUBSYSTEMS,LABEL,PARTLABEL,TYPE,NAME,PATH,MOUNTPOINT | grep usb | grep part | awk '{print $2,$3,$7,$8,$NF}' | sort -k 2
+	# tmpf=$(mktemp)
+	/usr/bin/lsblk -o SUBSYSTEMS,LABEL,PARTLABEL,TYPE,NAME,PATH,MOUNTPOINT \
+		| grep usb \
+		| grep part \
+		| sed 's/pci /pci SSD /g' | sed 's/SSD SSD/SSD/g' \
+		| awk '{print $2,$3,$7,$8,$NF}' \
+		| sort -k 2 
+		# | sed 's/pci /pci SSD /g' | sed 's/SSD SSD/SSD/g' \
+		# > "$tmpf" 
+	# cat "$tmpf"
+
+	# while read line; do
+	#	first_word=$(echo "${line}" | awk '{print $1}')
+	#	second_word=$(echo "${line}" | awk '{print $1}')
+
+	#	if [[ "$first_word" == "SSD" ]]; then 
+	#		echo "$line"
+	#	elif [[ "${#first_word}" -eq 3 ]]; then 
+	#		echo "SSD ${line}"
+	#	fi
+        # done < "${tmpf}"
+	#	| awk '{printf "SSD %s %s %s %s %s\n",$2,$3,$7,$8,$NF}' | sed 's/SSD SSD/SSD/g' \
 }
 
 function get_ssd_mounts_2()

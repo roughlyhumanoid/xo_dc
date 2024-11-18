@@ -17,6 +17,10 @@ ssds -j | jq -r .'blockdevices[] | [.name, .label, .size, .subsystems] | @tsv'
 
 printf "\n\nConnected USB storage devices\n"
 ssds -j | jq -r .'blockdevices[] | [.name, .label, .size, .subsystems] | @tsv' | grep -i 'usb'
+
+
+
+
 exit 0
 ssds -j | jq keys
 ssds -j | jq .[][0] | jq keys 

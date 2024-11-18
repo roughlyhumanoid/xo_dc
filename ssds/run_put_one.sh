@@ -1,5 +1,5 @@
 #!/bin/bash
-max_procs=4
+max_procs=2
 ssd=$1
 tail_this=$2
 sdir=/opt/xo_dc/ssds

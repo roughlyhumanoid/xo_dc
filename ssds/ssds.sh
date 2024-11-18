@@ -105,7 +105,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aACd:efFHi:jlLMoqQs:uvX:h" opt; do
+while getopts "aAc:Cd:efFHi:jlLMoP::qQs:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
@@ -187,6 +187,11 @@ while getopts "aACd:efFHi:jlLMoqQs:uvX:h" opt; do
     p)
         ssd_command='put_all'
       ;;
+    P)
+        ssd_command='put_one_mission'
+	ssd=$OPTARG
+	mission=$OPTARG
+      ;;
     q)
         quiet=0
       ;;
@@ -198,6 +203,7 @@ while getopts "aACd:efFHi:jlLMoqQs:uvX:h" opt; do
         quiet=0
 	check_sync=0
 	ssd=$OPTARG
+        ssd_command='scan_one'
       ;;
     u)
         just_local=0
@@ -239,10 +245,16 @@ case "$ssd_command" in
     	exit $?
     ;;
 
-  scan_all)
-	"${sd}/scan_all" 
+  help)
+	printf "Command help,  ssds -c 'clear_ssd | help | scan_one | scan-all | lsblk | list | stat1 | stat1_print\n"
+	# print_help
 	exit 0
     ;;
+
+  kill_upload)
+	"${sd}/kill_ssd_upload" "$ssd"
+    ;;
+
 
   lsblk)
 	lsblk -aOJ
@@ -262,19 +274,48 @@ case "$ssd_command" in
 	fi
 	exit 0
     ;;
+
+  manage_ssds)
+	source "${sd}/ssds_queue.sh"
+	q_help
+	exit 0
+    ;;
+
   put_all)
 	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
 	printf "Running run_put_one.sh go\n"
 	/opt/xo_dc/ssds/run_put_one.sh go
 	exit 0
     ;;
-  manage_ssds)
-	source "${sd}/ssds_queue.sh"
-	q_help
+  put_one_mission)
+	printf "Going to try to upload data from ssd: %s, missiono: %s\n" "$ssd" "$mission"
+	exit 0
+	/opt/xo_dc/ssds/put_one.sh "${ssd}" -m "${mission}" >> "/var/log/xocean_data_centre/put_one_${ssd}_${mission}.log" 2>&1 &
+	/opt/xo_dc/ssds/ssds -C
 	exit 0
     ;;
+
+  scan_one)
+	query_ssd=0
+    ;;
+
+  scan_all)
+	"${sd}/scan_all" 
+	exit 0
+    ;;
+
   ssd_hist)
 	"${sd}/ssd_history.sh"
+	exit 0
+    ;;
+
+  stat1)
+	"${sd}/stat1.sh"
+	exit 0
+    ;;
+
+  stat1_print)
+	"${sd}/stat1.sh" "print"
 	exit 0
     ;;
   *)

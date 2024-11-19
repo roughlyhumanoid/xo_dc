@@ -66,6 +66,8 @@ function print_help()
 	printf "\n"
         help_line_long '-l | list' 'list' 'List attached SSDs.' 'Example usage:  ssds -l'
 	printf "\n"
+        help_line_long 'live' 'Show live uploads' 'Show all live upload processes in realtime using htop.' 'Example usage:  ssds live'
+	printf "\n"
         help_line_long '-L' 'log level' 'Set log level to one of the standarsd levels:  DEBUG | INFO | WARNING | ERROR | CRTICALL' 'Example usage:  ssds -l -L INFO'
 	printf "\n"
 	help_line_long '-M | manage' 'manage' '{TESTING ONLY.  NOT OPERATIONAL). SSD queue management.' 'Example usage:  ssds -m'
@@ -290,6 +292,11 @@ case "$ssd_command" in
 		get_ssd_mounts > $tf
 		cat $tf | awk '{print $2}'
 	fi
+	exit 0
+    ;;
+
+  live)
+	/opt/xo_dc/ssds/htop_sync.sh
 	exit 0
     ;;
 

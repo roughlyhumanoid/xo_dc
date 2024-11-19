@@ -25,21 +25,24 @@ summary=false
 ne=${#exts[@]}
 start_index=0
 end_index=$ne
-verbose=1
-reload_data=1
-print_header_only=1
-no_header=1
-print_extra_info=1
-ssd_command=$OPTARG
-query_device=1
+
+check_sync=1
 device_id=-1
 device_name=''
-quiet=1
-query_ssd=1
-check_sync=1
-just_local=0
-one_line=1
 force=1
+just_local=0
+
+mission=''
+no_header=1
+one_line=1
+print_extra_info=1
+print_header_only=1
+ssd_command=''
+
+quiet=1
+query_device=1
+query_ssd=1
+reload_data=1
 verbose=1
 
 # print help
@@ -47,22 +50,25 @@ function print_help()
 {
 	# clear
         printf "\n### Usage for: %s ###\n" "$0"
-        printf "### This is not the help file you are looking for.\tBut it will have to do.\nUsage for: %s ###\n" "$0"
+	h_string=$(printf "### This is not the help file you are looking for.\tBut it will have to do.\tUsage for: %s ###\n\n" "$0")
+	echo $h_string
+	echo $h_string | sed 's/[a-zA-Z0-9:._\/]/-/g'
+	printf "\n"
+	# echo $h_string | sed 's/[.]/-/g'
 
-        printf "      -------\t\t   -----------\n"
         help_line_long '-a' 'automount' 'Automounts all ssds.  Runs automatically every 10 mins.' 'Example usage:  ssds -a'
         printf "\n"
         help_line_long '-C' 'Check processing' 'Shows running upload processes' 'Example ssds -C'
 	printf "\n"
         help_line_long '-e' 'ssd events' 'Shows ssd mount events.' 'Example usage:  ssds -e'
         printf "\n"
-        help_line_long '-f' 'Diagnostics only: full ssd details list' '' 'Example usage:  ssds -f'
+        help_line_long '-f' 'query device' 'Diagnostics only: full ssd details list' 'Example usage:  ssds -f'
         printf "\n"
-        help_line_long '-H | history' 'Show SSD connection history' '' 'Example usage:  ssds -H'
+        help_line_long '-H | history' 'Connection history' 'Show SSD connection history' 'Example usage:  ssds -H'
 	printf "\n"
         # help_line '-g' 'Print header only' '' 'Example usage:  ssds -g'
         # printf "\n"
-        help_line_long '-j | json' 'Diagnostics only: full ssd details list in json format' '' 'Example usage:  ssds -j'
+        help_line_long '-j | json' 'Get device jsons' 'Diagnostics only: full ssd details list in json format' '' 'Example usage:  ssds -j'
 	printf "\n"
         help_line_long '-l | list' 'list' 'List attached SSDs.' 'Example usage:  ssds -l'
 	printf "\n"
@@ -81,6 +87,8 @@ function print_help()
         help_line_long '-s | scan' 'Scan and check syncs' 'Scan and check ssd syncs' 'Example usage:  ssds -s 444'
 	printf "\n"
 	help_line_long 'sync_history | SH' 'Check ssd sync history' 'Sync history for particular SSD' 'Example usage:  ssds sync_history -S 223'
+	help_line_long '' '' '' 'Example usage:  ssds sync_history -S 223 -M X26'
+	help_line_long '' '' '' 'Example usage:  ssds sync_history -S 223 -M 241001'
 	printf "\n"
         help_line_long '-v' 'verbose' 'Print more verbose info for a command.' 'Example usage:  ssds -l -v'
 	printf "\n"
@@ -97,6 +105,7 @@ function print_help()
 	printf "%-${span}s%-${s2}s\n" "View latest hourly report on sync status" "ssds status" 
 	printf "%-${span}s%-${s2}s\n" "Check sync history for a particular SSD:" "ssds sync_history -S 499"
 	printf "%-${span}s%-${s2}s\n" "Check sync history for a particular mission:" "ssds sync_history -S '223 X26_MISSION_20241001'"
+	printf "%-${span}s%-${s2}s\n" "Check sync history for a particular mission:" "ssds sync_history -S 223 -M '20241001'"
 	printf "\n### End of Examples ### ----------------------\n\n"
 }
 
@@ -110,7 +119,11 @@ arg=$1
 
 if [[ ! "${arg:0:1}" == '-' ]]; then 
 	ssd_command=$1
-	shift; 
+	nargs="${#@}"
+
+	if [[ "$nargs" -gt 0 ]]; then
+		shift; 
+	fi
 fi
 
 ssd_dir=/opt/xo_dc/ssds
@@ -118,7 +131,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aAc:Cd:efFHi:jlLMoP::qQrs:S:uvX:h" opt; do
+while getopts "aAc:Cd:efFHi:jlLM:noP::qQrs:S:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
@@ -193,7 +206,11 @@ while getopts "aAc:Cd:efFHi:jlLMoP::qQrs:S:uvX:h" opt; do
 	query_ssd=0
       ;;
     M)
+	mission=$OPTARG
+      ;;
+    n)
         ssd_command='manage_ssds'
+	mission=$OPTARG
       ;;
     o)
 	one_line=0
@@ -371,7 +388,7 @@ case "$ssd_command" in
 
   sync_history | SH)
 	printf "Running: %s\n" "$ssd_command"
- 	cat /var/log/xocean_data_centre/summary_report_01_*.log | grep "${ssd} "
+ 	cat /var/log/xocean_data_centre/summary_report_01_*.log | grep "${ssd} " | grep "${mission}"
 	exit 0
     ;;
 

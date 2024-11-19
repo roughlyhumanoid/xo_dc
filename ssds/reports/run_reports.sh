@@ -20,6 +20,7 @@ source "${ssd_dir}/ssd_mounts.sh"
 # --- Set script variables --- #
 ssd_command=$1
 quiet=1
+dryrun=1
 
 # print help
 function print_help()
@@ -55,10 +56,13 @@ fi
 
 
 
-while getopts "cL:qx:h" opt; do
+while getopts "cdL:qx:h" opt; do
   case $opt in
     c)
 	ssd_command=$OPTARG
+      ;;
+    d)
+	dryrun=0
       ;;
     L)
         log_level=$OPTARG
@@ -89,15 +93,23 @@ function gen_reports {
 
 function upload_reports {
 	log_dir='/var/log/xocean_data_centre'
-	this_dest='S3://xocean-production-transition/DataCentre/DC1/reports/'
+	this_dest='s3://xocean-production-transition/data_centre/DC1/reports/'
+	dryrun_string=''
+	
+	if [[ "$dryrun" -eq 0 ]]; then 
+		dryrun_string=' --dryrun '
+	fi
 
-	aws s3 sync \
-		--profile dc_auto_camera \
-		"${log_dir}" "${this_dest}" \
-		--dryrun 
-		# --exclude "*" \
-		# --include "summary_report_01*" \
+	aws_s3_cmd="""aws s3 sync ${dryrun_string} \
+		--profile dc_auto_camera_logs \
+		${log_dir} ${this_dest} \
+		--exclude '*' --include 'summary_report*.log' 
+	"""
+
+	aws_c2=$(echo $aws_s3_cmd | tr -d '\t')
+
+	printf "About to run aws command:\n\t%s\n" "$aws_c2"
+	eval "$aws_c2"
 }
 
 upload_reports
-

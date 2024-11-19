@@ -383,6 +383,7 @@ function mount_ssd()
 	ssd_num=$1
 	ssd_dev_path=$2
 	ssd_mount_point="${ssd_mount_base}/ssd_${ssd_num}"
+	printf "Diag1: %s\n" "$ssd_num"
 	fstype=$(get_ssd_fstype $ssd_num)
 	printf "%s, Attempting to mount %s to %s as file system type: %s\n" "$ssd_num" "${ssd_dev_path}" "${ssd_mount_point}" "$fstype"
 	alread_mounted=$(is_already_mounted $ssd_num)

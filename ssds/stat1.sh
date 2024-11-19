@@ -9,7 +9,10 @@ report_base="summary_report_01"
 if [[ "$mode" == "print" ]]; then
 	# Just show report
 	fn=$(ls -1tr ${log_dir}/${report_base}*.log | tail -n 1)
-	printf "Showing latest update from: %s\n" "${fn}"
+	date_mod=$(/usr/bin/stat --format %y "$fn")
+	printf "### NOTE - This summary may be up to 1 hour old! ###\n"
+	printf "Updated at: %s\n" "$date_mod"
+	printf "This updated stored at %s\n\n" "${fn}"
 	cat "${fn}"
 	exit 0
 fi

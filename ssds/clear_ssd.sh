@@ -19,13 +19,13 @@ function just_header()
 {
 	if [[ "${1}" == "size" ]]; then
 		# printf "Count: %d (local) - %d (s3) = %d (diff)\n" "$local_count" "$s3_count" "$diff_count"
-		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent complete\n" \
+		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent\n" \
 			"SSD     " "USV_MISSION DIR    " "DC Server" \
 			"Size-check" \
 			"SSD bytes" "S3 bytes" "Size ( SSD - S3 )  " "Upload status" \
 			| sed 's/percent/%/g'
 	else
-		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent complete\n" \
+		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent\n" \
 			"SSD     " "USV_MISSION DIR    " "DC Server" \
 			"Count-check" \
 			"$local_count" "$s3_count" "$diff_count" "$count_s3_div_local" \
@@ -36,7 +36,7 @@ function just_header()
 function is_syncing()
 {
 	this_ssd=$1
-	ps -ef  | grep -i "ssd_${this_ssd}" | grep -v 'grep' > /dev/null 2>&1
+	ps -ef  | grep -i "ssd_${this_ssd}" | grep -Ev 'grep|/mount.ntfs-3g' > /dev/null 2>&1
 	result=$?
 
 	return $result
@@ -72,7 +72,7 @@ function ssd_sum()
 		fi
 	
 		# printf "Count: %d (local) - %d (s3) = %d (diff)\n" "$local_count" "$s3_count" "$diff_count"
-		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent complete %s\n" \
+		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s Remaining: %-${s6}s  %5spercent %s\n" \
 			"$ssd_label" "$mdir" "$this_host" "Count-check" \
 			"$local_count" "$s3_count" "$diff_count" "$count_s3_div_local" "${sync_string}"\
 			| sed 's/percent/%/g'
@@ -94,7 +94,7 @@ function ssd_sum()
 			s3_size_GB=0;
 		fi
 
-		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s  Remaining: %-${s6}s  %5spercent complete %s \t(SSD: %s GB,  S3: %s GB)\n" \
+		printf "%-${s0}s%-${s1}s%-${s2}s%-${s3}s SSD: %-20s S3: %-${s5}s  Remaining: %-${s6}s  %5spercent %s \t(SSD: %s GB,  S3: %s GB)\n" \
 			"$ssd_label" "$mdir" "$this_host" "Size-check" \
 			"$local_size" "$s3_size" "$diff_size" "$size_s3_div_local" "${sync_string}" "$local_size_GB" "$s3_size_GB" \
 			| sed 's/percent/%/g'

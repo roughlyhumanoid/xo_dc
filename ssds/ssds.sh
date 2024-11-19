@@ -50,65 +50,77 @@ function print_help()
         printf "### This is not the help file you are looking for.\tBut it will have to do.\nUsage for: %s ###\n" "$0"
 
         printf "      -------\t\t   -----------\n"
-        help_line '-a' 'automount' 'Automounts all ssds.  Runs automatically every 10 mins.' 'Example usage:  ssds -a'
+        help_line_long '-a' 'automount' 'Automounts all ssds.  Runs automatically every 10 mins.' 'Example usage:  ssds -a'
         printf "\n"
-        help_line '-C' 'Check processing' 'Shows running upload processes' 'Example ssds -C'
+        help_line_long '-C' 'Check processing' 'Shows running upload processes' 'Example ssds -C'
 	printf "\n"
-        help_line '-e' 'ssd events' 'Shows ssd mount events.' 'Example usage:  ssds -e'
+        help_line_long '-e' 'ssd events' 'Shows ssd mount events.' 'Example usage:  ssds -e'
         printf "\n"
-        help_line '-f' 'Diagnostics only: full ssd details list' '' 'Example usage:  ssds -f'
+        help_line_long '-f' 'Diagnostics only: full ssd details list' '' 'Example usage:  ssds -f'
         printf "\n"
-        help_line '-H' 'Show SSD connection history' '' 'Example usage:  ssds -H'
+        help_line_long '-H | history' 'Show SSD connection history' '' 'Example usage:  ssds -H'
 	printf "\n"
         # help_line '-g' 'Print header only' '' 'Example usage:  ssds -g'
         # printf "\n"
-        help_line '-j' 'Diagnostics only: full ssd details list in json format' '' 'Example usage:  ssds -j'
+        help_line_long '-j | json' 'Diagnostics only: full ssd details list in json format' '' 'Example usage:  ssds -j'
 	printf "\n"
-        help_line '-l' 'list' 'List attached SSDs.' 'Example usage:  ssds -l'
+        help_line_long '-l | list' 'list' 'List attached SSDs.' 'Example usage:  ssds -l'
 	printf "\n"
-        help_line '-L' 'log level' 'Set log level to one of the standarsd levels:  DEBUG | INFO | WARNING | ERROR | CRTICALL' 'Example usage:  ssds -l -L INFO'
+        help_line_long '-L' 'log level' 'Set log level to one of the standarsd levels:  DEBUG | INFO | WARNING | ERROR | CRTICALL' 'Example usage:  ssds -l -L INFO'
 	printf "\n"
-	help_line '-M' 'manage' '{TESTING ONLY.  NOT OPERATIONAL). SSD queue management.' 'Example usage:  ssds -m'
+	help_line_long '-M | manage' 'manage' '{TESTING ONLY.  NOT OPERATIONAL). SSD queue management.' 'Example usage:  ssds -m'
 	printf "\n"
-        help_line '-q' 'quiet' 'Just print basic info.' 'Example usage:  ssds -l -q'
+        help_line_long '-q' 'quiet' 'Just print basic info.' 'Example usage:  ssds -l -q'
 	printf "\n"
-        help_line '-Q' 'query device' 'Querys device by id or device path.  Get ID or path by running ssds -l' 'Example usage:  ssds -Q -d /dev/sdp1'
+        help_line_long '-Q' 'query device' 'Querys device by id or device path.  Get ID or path by running ssds -l' 'Example usage:  ssds -Q -d /dev/sdp1'
 	printf "\n"
-        help_line '-s' 'Scan and check syncs' 'Scan and check ssd syncs' 'Example usage:  ssds -s 444'
+        help_line_long '-r | refresh' 'refresh' 'Displays ssd summary page.' 'Example usage:  ssds refresh'
 	printf "\n"
-        help_line '-v' 'verbose' 'Print more verbose info for a command.' 'Example usage:  ssds -l -v'
+        help_line_long '-s | scan' 'Scan and check syncs' 'Scan and check ssd syncs' 'Example usage:  ssds -s 444'
 	printf "\n"
-        help_line '-h' 'help' 'Print this page' 'Example usage:  ssds -h'
+	help_line_long 'sync_history | SH' 'Check ssd sync history' 'Sync history for particular SSD' 'Example usage:  ssds sync_history -S 223'
+	printf "\n"
+        help_line_long '-v' 'verbose' 'Print more verbose info for a command.' 'Example usage:  ssds -l -v'
+	printf "\n"
+        help_line_long '-h | help' 'help' 'Print this page' 'Example usage:  ssds -h'
 	printf "\n"
 
-	span=50
+	span=60
 	s2=20
 	printf "\n### Examples ### -----------------------------\n\n"
 	printf "%-${span}s%-${s2}s\n" "Check what ssds are attached:" "ssds -l"
 	printf "%-${span}s%-${s2}s\n" "Check running sync processes:" "ssds -C"
 	printf "%-${span}s%-${s2}s\n" "Check sync status of an ssd:" "ssds -s 499"
 	printf "%-${span}s%-${s2}s\n" "Check if an ssd is ready to be cleared:" "ssds -X 499"
-
+	printf "%-${span}s%-${s2}s\n" "View latest hourly report on sync status" "ssds status" 
+	printf "%-${span}s%-${s2}s\n" "Check sync history for a particular SSD:" "ssds sync_history -S 499"
+	printf "%-${span}s%-${s2}s\n" "Check sync history for a particular mission:" "ssds sync_history -S '223 X26_MISSION_20241001'"
 	printf "\n### End of Examples ### ----------------------\n\n"
 }
 
 
 # --- read input parameters --- #
 # Take usv as initial parameter and shift or accept as -x parameter.  Must be first param.
-ssd_command=$1
+# ssd_command=$1
+arg=$1
 # check_usv_param ${usv} usv > /dev/null
 # result=$?
-# if [[ "${result}" -eq 0 ]]; then shift; fi
+
+if [[ ! "${arg:0:1}" == '-' ]]; then 
+	ssd_command=$1
+	shift; 
+fi
 
 ssd_dir=/opt/xo_dc/ssds
 source "${ssd_dir}/ssd_mounts.sh"
 
 
 # while getopts "aCde:gikKlpqrs:St:vx:h" opt; do
-while getopts "aAc:Cd:efFHi:jlLMoP::qQs:uvX:h" opt; do
+while getopts "aAc:Cd:efFHi:jlLMoP::qQrs:S:uvX:h" opt; do
   case $opt in
     A)
 	"${ssd_dir}/scan_all.sh"
+	ssd_command='scan_all'
 	exit 0
       ;;
     a)
@@ -198,6 +210,9 @@ while getopts "aAc:Cd:efFHi:jlLMoP::qQs:uvX:h" opt; do
     Q)
         query_device=0
       ;;
+    r)
+        ssd_command='refresh'
+      ;;
     s)
 	query_ssd=0
         quiet=0
@@ -205,6 +220,9 @@ while getopts "aAc:Cd:efFHi:jlLMoP::qQs:uvX:h" opt; do
 	ssd=$OPTARG
         ssd_command='scan_one'
       ;;
+    S)
+	ssd=$OPTARG
+      ;; 
     u)
         just_local=0
       ;;
@@ -234,7 +252,7 @@ done
 
 case "$ssd_command" in
 
-  clear_ssd)
+  clear_ssd | clear)
 	if [[ "$force" -eq 0 ]]; then
 		# printf "Not force deleting despite the fact you want me to.\n"
     		# "${sd}/clear_ssd" "$ssd"
@@ -256,7 +274,7 @@ case "$ssd_command" in
     ;;
 
 
-  lsblk)
+  lsblk | json)
 	lsblk -aOJ
 	exit 0
     ;;
@@ -281,13 +299,13 @@ case "$ssd_command" in
 	exit 0
     ;;
 
-  put_all)
+  put_all | upload_all)
 	printf "Running ssd by ssd sync staring with lowest ssd num.\n"
 	printf "Running run_put_one.sh go\n"
 	/opt/xo_dc/ssds/run_put_one.sh go
 	exit 0
     ;;
-  put_one_mission)
+  put_one_mission | upload)
 	printf "Going to try to upload data from ssd: %s, missiono: %s\n" "$ssd" "$mission"
 	exit 0
 	/opt/xo_dc/ssds/put_one.sh "${ssd}" -m "${mission}" >> "/var/log/xocean_data_centre/put_one_${ssd}_${mission}.log" 2>&1 &
@@ -295,7 +313,7 @@ case "$ssd_command" in
 	exit 0
     ;;
 
-  refresh)
+  refresh | reload | summary)
 	printf "### --- Datasync agent status-------------- ###\n"
 	datasync -c
 	printf "\n"
@@ -320,7 +338,7 @@ case "$ssd_command" in
 	exit 0
     ;;
 
-  scan_one)
+  scan_one | scan)
 	query_ssd=0
     ;;
 
@@ -329,7 +347,7 @@ case "$ssd_command" in
 	exit 0
     ;;
 
-  ssd_hist)
+  ssd_hist | history)
 	"${sd}/ssd_history.sh"
 	exit 0
     ;;
@@ -339,10 +357,17 @@ case "$ssd_command" in
 	exit 0
     ;;
 
-  stat1_print)
+  stat1_print | stats | status)
 	"${sd}/stat1.sh" "print"
 	exit 0
     ;;
+
+  sync_history | SH)
+	printf "Running: %s\n" "$ssd_command"
+ 	cat /var/log/xocean_data_centre/summary_report_01_*.log | grep "${ssd} "
+	exit 0
+    ;;
+
   *)
     # echo "no command"
     ;;

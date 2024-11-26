@@ -1,5 +1,5 @@
 #!/bin/bash
-max_procs=2
+max_procs=4
 ssd=$1
 tail_this=$2
 sdir=/opt/xo_dc/ssds
@@ -47,7 +47,7 @@ if [[ "${#ssd}" -le 2 ]]; then
 				"${sdir}/run_put_one.sh" "$this_ssd"
 			fi
 					
-			sleep 1
+			sleep 60
 			printf "%d instances running\n" "$nprocs"
 			ps -ef | grep -i ./put_one.sh | grep -v grep
 		done

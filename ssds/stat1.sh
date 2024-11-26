@@ -31,10 +31,15 @@ printf "### SSD summary - DC1 xodc ( ServerChoice Stevanage, transfer node serve
 /opt/xo_dc/ssds/clear_ssd.sh -H | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
 /opt/xo_dc/ssds/clear_ssd.sh -H | sed -e 's/[a-zA-Z0-9:%()]/-/g' | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
 
-
-for (( i=o; i<$ns; i++ )); do
+for (( i=0; i<"$ns"; i++ )); do
 	this_ssd="${ssds[$i]}"
-	printf "Adding stat1 info for %s\n" "${this_ssd}"
-	/opt/xo_dc/ssds//clear_ssd.sh "${this_ssd}" 208 -o -q | grep -i size | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+	nprocs=$(ps -ef | grep -i 'clear_ssd.sh 422' | grep -v 'grep' | wc -l)
+
+	if [[ "$nprocs" -eq 0 ]]; then
+		printf "Adding stat1 info for %s\n" "${this_ssd}"
+		/opt/xo_dc/ssds/clear_ssd.sh "${this_ssd}" 208 -o -q | grep -i size | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+	else
+		printf "Already running for %s\n" "${this_ssd}"
+	fi
 done
 

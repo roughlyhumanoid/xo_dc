@@ -377,6 +377,18 @@ function is_already_mounted()
         return $result
 }
 
+function query_ssd_by_num()
+{
+	ssd_num=$1
+
+	if [[ ! "dev" == *"${dev_path}"* ]]; then
+		dev_path=$(/opt/xo_dc/ssds/ssds -l -v | grep "$ssd_num" | awk '{print $4}')
+	else
+		dev_path="$ssd_num"
+	fi
+
+	ssds -Q -d "$dev_path"
+}
 
 function mount_ssd()
 {
@@ -395,6 +407,7 @@ function mount_ssd()
 	else
 		printf "%s, Going to mount SSD %s at device path: %s to mount point: %s\n" "$ssd_num" "$ssd_num" "$ssd_dev_path" "$ssd_mount_point"
 		printf "%s, MOUNTING SSD, device path: %s, mount point: %s\n" "$ssd_num" "$ssd_num" "$ssd_dev_path" "$ssd_mount_point"
+		# notify_ssd "new_mount" "$ssd_num" "$ssd_dev_path" "$ssd_mount_point"
 	fi
 
 	if [[ ! -d "${ssd_mount_point}" ]]; then 

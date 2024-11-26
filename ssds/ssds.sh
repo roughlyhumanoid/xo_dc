@@ -1,7 +1,8 @@
 #!/bin/bash
 
 which python | grep '/home/xo-mark' >/dev/null 2>&1; result=$?
-if [[ "${result}" -ne 0 ]]; then printf "Loading python environment.\n"; source /home/xo-mark/venv/bin/activate > /dev/null 2>&1; fi
+# if [[ "${result}" -ne 0 ]]; then printf "Loading python environment.\n"; source /home/xo-mark/venv/bin/activate > /dev/null 2>&1; fi
+if [[ "${result}" -ne 0 ]]; then source /home/xo-mark/venv/bin/activate > /dev/null 2>&1; fi
 
 # --- Error stuff --- #
 function print_error {
@@ -13,8 +14,8 @@ function print_error {
 trap print_error ERR
 
 # --- Load libs --- #
-script_dir=/opt/xo_usv/bash
-ssd_dir=/opt/xo_dc/ssds
+script_dir='/opt/xo_usv/bash'
+ssd_dir='/opt/xo_dc/ssds'
 sd="${ssd_dir}"
 source "${script_dir}/gen_utils.sh"
 source "${script_dir}/inv_utils.sh"
@@ -60,6 +61,8 @@ function print_help()
         printf "\n"
         help_line_long '-C' 'Check processing' 'Shows running upload processes' 'Example ssds -C'
 	printf "\n"
+        help_line_long 'diag1' 'Diagnostic info 1' 'Diagnostic info 1' 'ssds diag1'
+	printf "\n"
         help_line_long '-e' 'ssd events' 'Shows ssd mount events.' 'Example usage:  ssds -e'
         printf "\n"
         help_line_long '-f' 'query device' 'Diagnostics only: full ssd details list' 'Example usage:  ssds -f'
@@ -86,6 +89,8 @@ function print_help()
 	printf "\n"
         help_line_long '-s | scan' 'Scan and check syncs' 'Scan and check ssd syncs' 'Example usage:  ssds -s 444'
 	printf "\n"
+        help_line_long 'showfailed' 'Show falied mounts' 'Show failed mounts' 'Example usage:  ssds showfailed'
+	printf "\n"
 	help_line_long 'sync_history | SH' 'Check ssd sync history' 'Sync history for particular SSD' 'Example usage:  ssds sync_history -S 223'
 	help_line_long '' '' '' 'Example usage:  ssds sync_history -S 223 -M X26'
 	help_line_long '' '' '' 'Example usage:  ssds sync_history -S 223 -M 241001'
@@ -109,6 +114,35 @@ function print_help()
 	printf "\n### End of Examples ### ----------------------\n\n"
 }
 
+
+function list_mission_dirs {
+	ssd=$1
+	printf "Listing missions dirs for: %s\n" "$ssd"
+	query_path="/mnt/usb_drives/ssd_${ssd}"
+	ndirs=$(find "${query_path}" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | grep -Ev 'RECY|System Volume' | wc -l)
+
+	if [[ "$ndirs" -gt 0 ]]; then
+		tmp_fil=$(mktemp)
+		find "${query_path}" -maxdepth 1 -mindepth 1 -type d -exec basename {} \; | grep -Ev 'RECY|System Volume' > "$tmp_fil"
+		readarray -t subdirs <<< $(cat $tmp_fil)
+
+		ns="${#subdirs[@]}"
+		if [[ "$ns" -eq 0 ]]; then printf "SSD is empty: %s\n" "$ssd"; break; fi
+
+		if [[ "$one_line" -eq 0 ]]; then
+			pref=$(printf "%28s" '')
+			# "${ssd_dir}/mdsl/cc_disk_stats.sh" -j | awk -v "pref=$pref" '{printf "%s\t%s\n",pref,$0}' | awk NF
+		fi
+
+		for (( i=0; i<$ns; i++ )); do
+			subdir="${subdirs[$i]}"
+			# pref="ssd_${ssd} ${subdir}"
+			printf "SSD: %s\tDir: %s\n" "$ssd" "$subdir"
+		done
+	else
+		printf "%s ### SSD has no dierctories for upload ###\n" "ssd_${ssd}"
+	fi
+}
 
 # --- read input parameters --- #
 # Take usv as initial parameter and shift or accept as -x parameter.  Must be first param.
@@ -270,7 +304,6 @@ while getopts "aAc:Cd:efFHi:jlLM:noP::qQrs:S:uvX:h" opt; do
 done
 
 case "$ssd_command" in
-
   clear_ssd | clear)
 	if [[ "$force" -eq 0 ]]; then
 		# printf "Not force deleting despite the fact you want me to.\n"
@@ -280,6 +313,11 @@ case "$ssd_command" in
     		"${sd}/clear_ssd" "$ssd"
 	fi
     	exit $?
+    ;;
+
+  diag1)
+	"${sd}/diag/diag1.sh"
+	exit 0
     ;;
 
   help)
@@ -309,6 +347,12 @@ case "$ssd_command" in
 		get_ssd_mounts > $tf
 		cat $tf | awk '{print $2}'
 	fi
+	exit 0
+    ;;
+
+  list_mission_dirs)
+	ssd=$1
+	list_mission_dirs "$ssd"
 	exit 0
     ;;
 
@@ -355,6 +399,7 @@ case "$ssd_command" in
 	printf "### --- Active upload processe ------------ ###\n"
 	/opt/xo_dc/ssds/ssds -C
 	printf "### --------------------------------------- ###\n"
+	ls -l /mnt/usb_drives/*/X*
         # printf "### NOTE - This summary may be up to 1 hour old! ###\n"
 	# echo tree
 	# xsync nc
@@ -366,13 +411,18 @@ case "$ssd_command" in
 	query_ssd=0
     ;;
 
-  scan_all)
+  scan_all | scanall)
 	"${sd}/scan_all" 
 	exit 0
     ;;
 
   ssd_hist | history)
 	"${sd}/ssd_history.sh"
+	exit 0
+    ;;
+
+  showfailed)
+	"${sd}/show_failed" 
 	exit 0
     ;;
 
@@ -417,6 +467,8 @@ if [[ "$query_device" -eq 0 ]]; then
 
 	exit 0
 fi
+
+
 
 if [[ "$query_ssd" -eq 0 ]]; then
 	query_path="/mnt/usb_drives/ssd_${ssd}"

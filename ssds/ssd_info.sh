@@ -6,13 +6,16 @@ ssd_info_json="${info_dir}/ssd_info_${this_host}_${td}.json"
 ssd_info_csv="${info_dir}/ssd_info_${this_host}_${td}.csv"
 ssd_info_tsv="${info_dir}/ssd_info_${this_host}_${td}.tsv"
 
-/opt/xo_dc/ssds/ssds -j 
-exit 0
+# /opt/xo_dc/ssds/ssds -j 
 
 /opt/xo_dc/ssds/ssds -j \
 	| jq -r '.blockdevices[] | select (.subsystems=="block:scsi:usb:pci")' \
 	>> "$ssd_info_json"
 printf "Written to: %s\n\n\n" "$ssd_info_json"
+
+
+
+
 exit 0
 
 

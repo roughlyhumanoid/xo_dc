@@ -14,7 +14,7 @@ get_ssd_procs
 if [[ "$nprocs" -ge 1 ]]; then
 	m_pid=$(ps -ef | grep -iE "$grep_string" | grep -v 'grep' | awk '{print $2}')
 	printf "About to kill: %s\n" "$m_pid"
-	kill $m_pid
+	sudo kill $m_pid
 
 	get_ssd_procs
 fi

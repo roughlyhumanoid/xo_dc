@@ -45,7 +45,7 @@ function is_syncing()
 function ssd_sum()
 {
 	this_ssd=$1
-
+	printf "Scanning file: %s\n" "$tmpfil"
 	while read line; do 
 		if [[ "$quiet" -ne 0 ]]; then echo $line; fi
 		ssd_label="ssd_${this_ssd}"

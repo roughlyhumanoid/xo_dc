@@ -11,8 +11,8 @@ if [[ "$mode" == "print" ]]; then
 	fn=$(ls -1tr ${log_dir}/${report_base}*.log | tail -n 1)
 	date_mod=$(/usr/bin/stat --format %y "$fn")
 	printf "### NOTE - This summary may be up to 1 hour old! ###\n"
-	printf "Updated at: %s\n" "$date_mod"
-	printf "This updated stored at %s\n\n" "${fn}"
+	printf "\tUpdated at: %s\n" "$date_mod"
+	printf "\tThis update stored at %s\n" "${fn}"
 	cat "${fn}"
 	exit 0
 fi
@@ -27,7 +27,7 @@ stat1_file="${log_dir}/${report_base}_${dt}.log"
 printf "Writing output to: %s\n" "$stat1_file"
 
 # Write report
-printf "### SSD summary - DC1 xodc ( ServerChoice Stevanage, transfer node server ) ###\n" > "$stat1_file"
+printf "### SSD summary - DC1 xodc, ServerChoice Stevanage, Transfer node server\n\n" > "$stat1_file"
 /opt/xo_dc/ssds/clear_ssd.sh -H | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
 /opt/xo_dc/ssds/clear_ssd.sh -H | sed -e 's/[a-zA-Z0-9:%()]/-/g' | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
 
@@ -37,7 +37,8 @@ for (( i=0; i<"$ns"; i++ )); do
 
 	if [[ "$nprocs" -eq 0 ]]; then
 		printf "Adding stat1 info for %s\n" "${this_ssd}"
-		/opt/xo_dc/ssds/clear_ssd.sh "${this_ssd}" 208 -o -q | grep -i size | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+#		/opt/xo_dc/ssds/clear_ssd.sh "${this_ssd}" 208 -o -q | grep -i size | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
+		/opt/xo_dc/ssds/clear_ssd.sh "${this_ssd}" 208 -o -q | grep -Ei 'size|No mission folders to upload' | /usr/bin/ts >> "$stat1_file" 2> "${stat1_file}.err"
 	else
 		printf "Already running for %s\n" "${this_ssd}"
 	fi

@@ -223,7 +223,7 @@ fi
 if [[ "${num_entries}" -gt 0 ]]; then
 	ssd_sum "$ssd"
 else
-	printf "\t%s, No mission folders to upload.\n" "$ssd_label"
+	printf "%s, No mission folders to upload.\n" "$ssd_label"
 	this_ssd_dir="${ssd_base}/ssd_${ssd}"
 
 	if [[ "${quiet}" -ne 0 ]]; then

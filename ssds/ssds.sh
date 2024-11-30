@@ -385,9 +385,9 @@ case "$ssd_command" in
 	printf "### --- Datasync agent status-------------- ###\n"
 	datasync -c
 	printf "\n"
-	printf "### --- Mounted SSDS ---------------------- ###\n"
-	/opt/xo_dc/ssds/ssds -l | awk '{printf "\t%s\n",$0}'
-	printf "### --------------------------------------- ###\n\n"
+	# printf "### --- Mounted SSDS ---------------------- ###\n"
+	# /opt/xo_dc/ssds/ssds -l | awk '{printf "\t%s\n",$0}'
+	# printf "### --------------------------------------- ###\n\n"
 	printf "\n"
 
 	# echo won
@@ -399,7 +399,7 @@ case "$ssd_command" in
 	printf "### --- Active upload processe ------------ ###\n"
 	/opt/xo_dc/ssds/ssds -C
 	printf "### --------------------------------------- ###\n"
-	ls -l /mnt/usb_drives/*/X*
+	# ls -l /mnt/usb_drives/*/X*
         # printf "### NOTE - This summary may be up to 1 hour old! ###\n"
 	# echo tree
 	# xsync nc
